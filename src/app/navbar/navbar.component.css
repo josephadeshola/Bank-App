@@ -38,7 +38,7 @@
     }
     .get-position{
         position: relative;
-        bottom: 60px !important;
+        bottom: 0px !important;
     }
     .get-bg1{
         height: 100vh;
