@@ -26,6 +26,10 @@
     backdrop-filter: blur(6px);
     background-color: rgba(255, 255, 255, 0.244);
 }
+.new-position {
+    position: fixed;
+    bottom: 0;
+}
 
 @media (max-width: 688px) {
     .get-bg {
