@@ -71,7 +71,8 @@
     }
     .get-position{
         position: relative;
-        bottom: 0px !important;
+        margin-top: -20px;
+        /* bottom: 0px !important; */
     }
     .get-bg1{
         height: 100vh;
