@@ -84,8 +84,9 @@
     .new-position
     {
      
-        position: fixed;
-        bottom: 0;
+        position: relative;
+       bottom: 0;
+       position: fixed;
     }
     .new-position .btn{
         border-radius: 50px;
