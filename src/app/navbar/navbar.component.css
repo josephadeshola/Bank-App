@@ -29,9 +29,49 @@
     background-color: rgba(255, 255, 255, 0.244);
 }
 @media (max-width:688px) {
+    .get-bg{
+        height: 100vh;
+        background-image: url(https://img.freepik.com/free-vector/credit-card-going-inside-mobile-digital-transaction-concept_1017-36203.jpg?w=740&t=st=1701671904~exp=1701672504~hmac=7f70f89226ad25eeb1049ae8abd2e4444bbb77e0742d9abff48e0cf1b6f174d0);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
     .get-position{
         position: relative;
         bottom: 60px !important;
+    }
+    .get-bg1{
+        height: 100vh;
+        backdrop-filter: blur(8px);
+        background-color: rgba(255, 255, 255, 0.175);
+    }
+    .img-bg{
+        display: none;
+    }
+    .new-position
+    {
+     
+        position: fixed;
+        bottom: 0;
+    }
+    .new-position .btn{
+        border-radius: 50px;
+        border: 2px solid white;
+    }
+    
+    
+}
+@media (max-width:889px) {
+    .get-bg{
+        height: 100vh;
+        background-image: url(https://img.freepik.com/free-vector/credit-card-going-inside-mobile-digital-transaction-concept_1017-36203.jpg?w=740&t=st=1701671904~exp=1701672504~hmac=7f70f89226ad25eeb1049ae8abd2e4444bbb77e0742d9abff48e0cf1b6f174d0);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .get-position{
+        position: relative;
+        bottom: 0px !important;
     }
     .get-bg1{
         height: 100vh;
