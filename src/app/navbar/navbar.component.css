@@ -1,28 +1,43 @@
-.get-bg {
-    height: 100vh;
-    background-image: url(https://img.freepik.com/free-vector/credit-card-going-inside-mobile-digital-transaction-concept_1017-36203.jpg?w=740&t=st=1701671904~exp=1701672504~hmac=7f70f89226ad25eeb1049ae8abd2e4444bbb77e0742d9abff48e0cf1b6f174d0);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  overflow-x: hidden;
 }
 
 .btn-rounded {
-    border-radius: 50px;
-    border: 1px solid rgb(191, 191, 215);
-}
-
-.get-bg1 {
-    height: 100vh;
-    backdrop-filter: blur(8px);
-    background-color: rgba(255, 255, 255, 0.175);
+  border-radius: 50px;
+  border: 1px solid rgb(191, 191, 215);
 }
 
 .img-bg {
-    border-radius: 20px;
-    /* margin-top: -200px; */
-    /* height: 30vh; */
-    /* margin-left: 90px; */
-    border: 1px solid rgba(223, 223, 227, 0.92);
-    backdrop-filter: blur(6px);
-    background-color: rgba(255, 255, 255, 0.244);
+  border-radius: 20px;
+}
+.image-circle {
+  margin-top: 30px;
+  border: 2px solid linear-gradient(135deg, #00f1ff, #d400ff);
+  height: 80vh;
+  width: 80vh;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00f1ff, #d400ff);
+}
+
+@media (max-width: 688px) {
+  .image-circle {
+    margin-top: 10px;
+    border: 2px solid linear-gradient(135deg, #00f1ff, #d400ff) !important ;
+    height: 50vh;
+    width: 50vh;
+    text-align: center;
+    margin: auto;
+    border-radius: 50%;
+    background-color: blue;
+  }
+  .getStarted-btn {
+    bottom: 0px;
+    position: fixed;
+    background: linear-gradient(135deg, #00f1ff, #d400ff);
+  }
 }

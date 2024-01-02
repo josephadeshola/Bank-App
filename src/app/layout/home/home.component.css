@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.btn-rounded {
+  border-radius: 50px;
+  border: none;
+  border: 1px solid rgb(191, 191, 215);
+  background: linear-gradient(135deg, #00f1ff, #d400ff);
+}
+.img-bg {
+  border-radius: 20px;
+}
+#d-color {
+  color: #0073ff;
+}
+@media (max-width: 688px) {
+  .getStarted-btn {
+    bottom: 0px;
+    position: fixed;
+  }
+}
