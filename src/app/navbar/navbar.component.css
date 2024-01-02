@@ -24,12 +24,29 @@ body {
   background: linear-gradient(135deg, #00f1ff, #d400ff);
 }
 
+@media screen and (max-width: 600px) {
+    .image-circle {
+        margin-top: 10px;
+        border: 2px solid linear-gradient(135deg, #00f1ff, #d400ff) !important ;
+        height: 40vh;
+        width: 40vh;
+        text-align: center;
+        margin: auto;
+        border-radius: 50%;
+        background-color: blue;
+      }
+      .getStarted-btn {
+        bottom: 0px;
+        position: fixed;
+        background: linear-gradient(135deg, #00f1ff, #d400ff);
+      }
+}
 @media (max-width: 688px) {
   .image-circle {
     margin-top: 10px;
     border: 2px solid linear-gradient(135deg, #00f1ff, #d400ff) !important ;
-    height: 50vh;
-    width: 50vh;
+    height: 40vh;
+    width: 40vh;
     text-align: center;
     margin: auto;
     border-radius: 50%;
@@ -40,4 +57,57 @@ body {
     position: fixed;
     background: linear-gradient(135deg, #00f1ff, #d400ff);
   }
+}
+
+@media  (max-width: 767px) {
+    .image-circle {
+        margin-top: 10px;
+        border: 2px solid linear-gradient(135deg, #00f1ff, #d400ff) !important ;
+        height: 40vh;
+        width: 40vh;
+        text-align: center;
+        margin: auto;
+        border-radius: 50%;
+        background-color: blue;
+      }
+      .getStarted-btn {
+        bottom: 0px;
+        position: fixed;
+        background: linear-gradient(135deg, #00f1ff, #d400ff);
+      }
+}
+
+@media  (max-width: 480px) {
+    .image-circle {
+        margin-top: 10px;
+        border: 2px solid linear-gradient(135deg, #00f1ff, #d400ff) !important ;
+        height: 40vh;
+        width: 40vh;
+        text-align: center;
+        margin: auto;
+        border-radius: 50%;
+        background-color: blue;
+      }
+      .getStarted-btn {
+        bottom: 0px;
+        position: fixed;
+        background: linear-gradient(135deg, #00f1ff, #d400ff);
+      }
+}
+@media (max-width: 991px) {
+    .image-circle {
+        margin-top: 10px;
+        border: 2px solid linear-gradient(135deg, #00f1ff, #d400ff) !important ;
+        height: 40vh;
+        width: 40vh;
+        text-align: center;
+        margin: auto;
+        border-radius: 50%;
+        background-color: blue;
+      }
+      .getStarted-btn {
+        bottom: 0px;
+        position: fixed;
+        background: linear-gradient(135deg, #00f1ff, #d400ff);
+      }
 }
