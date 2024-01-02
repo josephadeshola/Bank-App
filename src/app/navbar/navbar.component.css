@@ -15,6 +15,12 @@ body {
 .img-bg {
   border-radius: 20px;
 }
+.btn-rounded {
+    border-radius: 50px;
+    border: none;
+    border: 1px solid rgb(191, 191, 215);
+    background: linear-gradient(135deg, #00f1ff, #d400ff);
+  }
 .image-circle {
   margin-top: 30px;
   border: 2px solid linear-gradient(135deg, #00f1ff, #d400ff);
