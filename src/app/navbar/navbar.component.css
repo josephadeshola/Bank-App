@@ -38,6 +38,7 @@ body {
         width: 40vh;
         text-align: center;
         margin: auto;
+        margin-top: 10pc !important;
         border-radius: 50%;
         background-color: blue;
       }
@@ -55,6 +56,7 @@ body {
     width: 40vh;
     text-align: center;
     margin: auto;
+    margin-top: 10pc !important;
     border-radius: 50%;
     background-color: blue;
   }
@@ -73,6 +75,7 @@ body {
         width: 40vh;
         text-align: center;
         margin: auto;
+        margin-top: 10pc !important;
         border-radius: 50%;
         background-color: blue;
       }
@@ -91,6 +94,7 @@ body {
         width: 40vh;
         text-align: center;
         margin: auto;
+        margin-top: 10pc !important;
         border-radius: 50%;
         background-color: blue;
       }

@@ -1,10 +1,119 @@
 <div class="container">
-    <div class="row">
-        <div class="border col-6">
+    <div class="row mt-top">
+        <div class="border col-md-6 col-12 ">
+            <mat-horizontal-stepper [labelPosition]="'bottom'">
+                <mat-step label="Sign Up">
+                    <ng-template matStepLabel>
+                        <h5>Sign-up</h5>
+                    </ng-template>
+                    <div class="">
+                        <form [formGroup]="firstFormGroup">
+                            <mat-form-field class="col-12">
+                                <mat-label>Full Name</mat-label>
+                                <input matInput [(ngModel)]="first" class="col-12" placeholder="First name"
+                                    formControlName="firstCtrl" required />
+                            </mat-form-field>
+                            <mat-form-field class="col-12">
+                                <mat-label>Email Address</mat-label>
+                                <input matInput [(ngModel)]="first" class="col-12" placeholder="Email Address"
+                                    formControlName="firstCtrl" required />
+                            </mat-form-field>
+                            <mat-form-field class="col-12">
+                                <mat-label>Phone Number</mat-label>
+                                <input matInput [(ngModel)]="first" class="col-12" placeholder="Phone Number"
+                                    formControlName="firstCtrl" required />
+                            </mat-form-field>
+                            <mat-form-field class="col-12">
+                                <mat-label>Password</mat-label>
+                                <input matInput [(ngModel)]="first" class="col-12" placeholder="Password"
+                                    formControlName="firstCtrl" required />
+                            </mat-form-field>
 
+                            <mat-radio-group id="demo-optional-label-group" class="demo-radio-group"
+                                [(ngModel)]="optionalLabelText" (ngModelChange)="updateOptionalLabel()"
+                                formControlName="optionalLabel">
+                                <mat-radio-button *ngFor="let optionalLabelTextChoice of optionalLabelTextChoices"
+                                    [value]="optionalLabelTextChoice">{{ optionalLabelTextChoice }}</mat-radio-button>
+
+                            </mat-radio-group>
+                            <div>
+                                <button mat-button matStepperNext class="border mt-3 border-none rounded">
+                                    <i class="bi bi-arrow-right-circle-fill fs-2 text-primary"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </mat-step>
+                <mat-step label="Personal Data">
+                    <div class="col-12">
+                        <form [formGroup]="firstFormGroup">
+                            <mat-form-field class="col-12">
+                                <mat-label>Username</mat-label>
+                                <input matInput [(ngModel)]="first" class="col-12" placeholder="First name"
+                                    formControlName="firstCtrl" required />
+                            </mat-form-field>
+                            <mat-form-field class="col-12">
+                                <mat-label>Date of Birth</mat-label>
+                                <input matInput [(ngModel)]="first" type="date" class="col-12" placeholder="First name"
+                                    formControlName="firstCtrl" required />
+                            </mat-form-field>
+                            <mat-form-field class="col-12">
+                                <mat-label>Residential Address</mat-label>
+                                <input matInput [(ngModel)]="first" class="col-12" placeholder="Ex. 1 Main St, New York, NY"
+                                    formControlName="firstCtrl" required />
+                            </mat-form-field>
+                            <mat-form-field class="col-12">
+                                <mat-label>NIN / BVN</mat-label>
+                                <input matInput [(ngModel)]="first" type="number" class="col-12" placeholder="NIN / BVN"
+                                    formControlName="firstCtrl" required />
+                            </mat-form-field>                            
+                            <mat-form-field class="col-12">
+                                <mat-label>Language</mat-label>
+                                <input matInput [(ngModel)]="first" class="col-12" placeholder="Phone Number"
+                                    formControlName="firstCtrl" required />
+                            </mat-form-field>                            
+                            <mat-form-field class="col-12">
+                                <mat-label>Marital Status</mat-label>
+                                <input matInput [(ngModel)]="first" class="col-12" placeholder="Phone Number"
+                                    formControlName="firstCtrl" required />
+                            </mat-form-field>                            
+                            <div>
+                                <button mat-button matStepperNext class="border mt-3 border-none rounded">
+                                    <i class="bi bi-arrow-right-circle-fill fs-2 text-primary"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </mat-step>
+                <mat-step label="Login">
+                    <div>
+                        <p>This is the Login step content.</p>
+                    </div>
+                </mat-step>
+            </mat-horizontal-stepper>
         </div>
-        <div class="border col-6">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti ullam numquam fuga error natus odio. Natus exercitationem accusamus delectus quasi corrupti asperiores. Facilis adipisci ullam saepe necessitatibus officia quasi quaerat itaque ipsa nobis dolorem quas corrupti nulla sint cumque architecto at neque, animi non ipsam eveniet unde? Quisquam blanditiis tempore omnis neque, impedit ducimus nulla tempora cum corrupti amet, excepturi unde nisi quos id ipsam sequi molestiae tenetur minus deserunt aliquam rem animi adipisci! Accusantium amet veritatis commodi reprehenderit, labore ex rem fuga deserunt praesentium error ut! Id voluptatibus, adipisci animi repellendus iusto omnis, neque optio eius quidem earum aspernatur sit enim ducimus impedit quibusdam sunt, et dolore deleniti! Nulla exercitationem aliquid quod earum similique, non aspernatur nobis et ipsa explicabo nam vero, commodi unde sunt magnam aut quisquam eaque doloremque deleniti voluptatum, qui fuga! Molestias exercitationem ipsam laborum sapiente fugit voluptatibus eum architecto vel, et itaque deserunt distinctio blanditiis iusto repudiandae quo quod recusandae placeat voluptas quisquam amet rem voluptatum cupiditate? Reprehenderit, similique. Minus animi aut temporibus voluptatum laboriosam tempore sequi totam expedita ipsa! Impedit explicabo a voluptatem repellat est! Unde incidunt soluta, delectus minus rem quidem officia accusantium tempore dolorum dicta autem pariatur? Rem omnis enim pariatur quia.
+        <div class="border col-md-6 col-12 d-md-block d-none mt-5 mt-md-0 text-center">
+            <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://img.freepik.com/premium-vector/flat-design-staking-illustration_23-2149409052.jpg?w=740" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://img.freepik.com/free-vector/flat-design-installment-illustration_23-2149409058.jpg?w=740&t=st=1704412212~exp=1704412812~hmac=a9a652e79d57cd868f79d2af39c0baa6304072d74f9269a45236536fb4685f87" class="d-block w-100" alt="...">
+                  </div>
+                  <div style="height: 100vh;" class="carousel-item  mt-5">
+                    <img style="height: 100vh;" class="mx-auto  rounded " src="https://img.freepik.com/free-photo/closeup-man-making-contactless-payment-with-smart-phone_637285-12517.jpg?w=740&t=st=1704412336~exp=1704412936~hmac=8b1754c90253f8bb8b3680d0a7ec5b019a7306eae92b18a06e4804afa6d69f44" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
         </div>
     </div>
 </div>
