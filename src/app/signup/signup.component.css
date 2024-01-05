@@ -8,3 +8,9 @@
 .mt-top{
   margin-top: 4pc;
 }
+.btn-color{
+  background-color: rgb(25, 25, 133);
+  border: none;
+  border-radius: 3px !important;
+  color: #fff;
+}

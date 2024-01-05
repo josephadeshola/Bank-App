@@ -19,105 +19,100 @@ body {
     border-radius: 50px;
     border: none;
     border: 1px solid rgb(191, 191, 215);
-    background: linear-gradient(135deg, #00f1ff, #d400ff);
+    background: rgb(25, 25, 133);
   }
 .image-circle {
   margin-top: 30px;
-  border: 2px solid linear-gradient(135deg, #00f1ff, #d400ff);
   height: 80vh;
   width: 80vh;
   border-radius: 50%;
-  background: linear-gradient(135deg, #00f1ff, #d400ff);
+  background:rgb(25, 25, 133);
 }
 
 @media screen and (max-width: 600px) {
     .image-circle {
         margin-top: 10px;
-        border: 2px solid linear-gradient(135deg, #00f1ff, #d400ff) !important ;
         height: 40vh;
         width: 40vh;
         text-align: center;
         margin: auto;
         margin-top: 10pc !important;
         border-radius: 50%;
-        background-color: blue;
+        background-color: rgb(25, 25, 133);
       }
       .getStarted-btn {
         bottom: 0px;
         position: fixed;
-        background: linear-gradient(135deg, #00f1ff, #d400ff);
+        background: rgb(25, 25, 133);
       }
 }
 @media (max-width: 688px) {
   .image-circle {
     /* margin-top: 10px; */
-    border: 2px solid linear-gradient(135deg, #00f1ff, #d400ff) !important ;
     height: 40vh;
     width: 40vh;
     text-align: center;
     margin: auto;
     margin-top: 10pc !important;
     border-radius: 50%;
-    background-color: blue;
+    background-color:rgb(25, 25, 133);
   }
   .getStarted-btn {
     bottom: 0px;
     position: fixed;
-    background: linear-gradient(135deg, #00f1ff, #d400ff);
+    background:rgb(25, 25, 133);
   }
 }
 
 @media  (max-width: 767px) {
     .image-circle {
         /* margin-top: 10px; */
-        border: 2px solid linear-gradient(135deg, #00f1ff, #d400ff) !important ;
         height: 40vh;
         width: 40vh;
         text-align: center;
         margin: auto;
         margin-top: 10pc !important;
         border-radius: 50%;
-        background-color: blue;
+        background-color:rgb(25, 25, 133);
       }
       .getStarted-btn {
         bottom: 0px;
+        border-radius: 1px !important;
         position: fixed;
-        background: linear-gradient(135deg, #00f1ff, #d400ff);
+        background:rgb(25, 25, 133);
       }
 }
 
 @media  (max-width: 480px) {
     .image-circle {
         /* margin-top: 10px; */
-        border: 2px solid linear-gradient(135deg, #00f1ff, #d400ff) !important ;
         height: 40vh;
         width: 40vh;
         text-align: center;
         margin: auto;
         margin-top: 10pc !important;
         border-radius: 50%;
-        background-color: blue;
+        background-color:rgb(25, 25, 133);
       }
       .getStarted-btn {
         bottom: 0px;
         position: fixed;
-        background: linear-gradient(135deg, #00f1ff, #d400ff);
+        background:rgb(25, 25, 133);
       }
 }
 @media (max-width: 991px) {
     .image-circle {
         /* margin-top: 10px; */
-        border: 2px solid linear-gradient(135deg, #00f1ff, #d400ff) !important ;
         height: 40vh;
         width: 40vh;
         text-align: center;
         margin: auto;
         border-radius: 50%;
-        background-color: blue;
+        background-color:rgb(25, 25, 133);
       }
       .getStarted-btn {
         bottom: 0px;
         position: fixed;
-        background: linear-gradient(135deg, #00f1ff, #d400ff);
+        background: rgb(25, 25, 133);
       }
 }
