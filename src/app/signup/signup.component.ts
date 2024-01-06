@@ -8,30 +8,73 @@ import { MatStepperIntl } from '@angular/material/stepper';
   styleUrls: ['./signup.component.css'],
   providers: [],
 })
-export class SignupComponent implements OnInit {
-  public firstFormGroup: any = '';
+export class SignupComponent {
+  // signup Details
+  fullName = '';
+  email = '';
+  phone = '';
+  password = '';
+  optionalLabel = '';
+  // personal Details
+  userName = '';
+  birth = '';
+  address = '';
+  nin_bvn = '';
+  ninBvn = '';
+  language = '';
+  marital = '';
+  // login Details
+  userEmail = '';
+  userPass = '';
+
+  // public firstFormGroup: any = '';
   first = '';
   optionalLabelText: string = '';
   optionalLabelTextChoices: string[] = ['Male', 'Female', 'Other'];
-  firstFormRadio = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
-  });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
+  // firstFormRadio = this._formBuilder.group({
+  //   firstCtrl: ['', Validators.required],
+  // });
 
   constructor(
-    private _formBuilder: FormBuilder,
-    private _matStepperIntl: MatStepperIntl
+    public _formBuilder: FormBuilder,
+    public _matStepperIntl: MatStepperIntl
   ) {}
+  public firstFormGroup = this._formBuilder.group({
+    fullName: ['', Validators.required],
+    email: ['', [Validators.required, Validators.maxLength(20)]],
+    phone: ['', [Validators.required, Validators.maxLength(11)]],
+    password: ['', [Validators.required, Validators.maxLength(6)]],
+    optionalLabel: [],
+  });
+  public secondFormGroup = this._formBuilder.group({
+    userName: ['', Validators.required],
+    birth: ['', Validators.required],
+    address: ['', Validators.required],
+    nin_bvn: ['', Validators.required],
+    language: ['', Validators.required],
+    marital: ['', Validators.required],
+  });
+  public thirdFormGroup = this._formBuilder.group({
+    userEmail: ['', Validators.required],
+    userPass: ['', Validators.required],
+  });
 
-  ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required],
-    });
-  }
+  // secondFormGroup = this._formBuilder.group({
+  //   secondCtrl: ['', Validators.required],
+  // });
+
+  // ngOnInit() {
+  //   this.firstFormGroup = this._formBuilder.group({
+  //     firstCtrl: ['', Validators.required],
+  //   });
+  // }
   updateOptionalLabel() {
     this._matStepperIntl.optionalLabel = this.optionalLabelText;
     this._matStepperIntl.changes.next();
+  }
+  
+  StartRegister() {
+    console.log(this.firstFormGroup.value);
+    
   }
 }
