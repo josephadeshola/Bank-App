@@ -16,8 +16,5 @@
 }
 .alert {
   height: 2pc;
-  text-indent: 20px;
-  justify-content: center;
-  display: flex;
-  align-items: center;
+  
 }

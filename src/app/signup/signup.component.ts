@@ -41,9 +41,16 @@ export class SignupComponent {
   ) {}
   public firstFormGroup = this._formBuilder.group({
     fullName: ['', Validators.required],
-    email: ['', [Validators.required, Validators.maxLength(20)]],
+    email: ['', [Validators.required, Validators.email]],
     phone: ['', [Validators.required, Validators.maxLength(11)]],
-    password: ['', [Validators.required, Validators.maxLength(6)]],
+    password: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(6),
+        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/),
+      ],
+    ],
     optionalLabel: [],
   });
   public secondFormGroup = this._formBuilder.group({
@@ -55,8 +62,15 @@ export class SignupComponent {
     marital: ['', Validators.required],
   });
   public thirdFormGroup = this._formBuilder.group({
-    userEmail: ['', Validators.required],
-    userPass: ['', Validators.required],
+    userEmail: ['', [Validators.required, Validators.email]],
+    userPass: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(6), // Adjust the minimum length as needed
+        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/), // At least one lowercase, one uppercase, and one numeric character
+      ],
+    ],
   });
 
   // secondFormGroup = this._formBuilder.group({
@@ -72,9 +86,8 @@ export class SignupComponent {
     this._matStepperIntl.optionalLabel = this.optionalLabelText;
     this._matStepperIntl.changes.next();
   }
-  
+
   StartRegister() {
     console.log(this.firstFormGroup.value);
-    
   }
 }
