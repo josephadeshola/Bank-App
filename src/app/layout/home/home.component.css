@@ -28,4 +28,7 @@ nav{
     bottom: 0px;
     position: fixed;
   }
+  .navlogo{
+    margin-top: -22px;
+  }
 }
