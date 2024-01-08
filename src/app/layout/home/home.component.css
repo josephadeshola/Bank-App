@@ -7,6 +7,10 @@ body {
   overflow-x: hidden;
 }
 
+nav{
+  height: 10vh;
+  border-radius: 0px 0px 12px 12px;
+}
 .btn-rounded {
   border-radius: 50px;
   border: none;
