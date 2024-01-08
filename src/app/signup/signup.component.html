@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row mt-top">
-    <div class=" col-md-6 col-12">
+    <div class="col-md-6 col-12">
       <mat-horizontal-stepper [labelPosition]="'bottom'">
         <mat-step label="Sign Up">
           <ng-template matStepLabel>
@@ -25,21 +25,20 @@
                     firstFormGroup.get('fullName')?.touched
                   "
                 />
-                
               </mat-form-field>
               <div
-                  *ngIf="
-                    firstFormGroup.get('fullName')?.invalid &&
-                    firstFormGroup.get('fullName')?.touched
-                  "
+                *ngIf="
+                  firstFormGroup.get('fullName')?.invalid &&
+                  firstFormGroup.get('fullName')?.touched
+                "
+              >
+                <div
+                  class="col-12 text-danger text-center"
+                  *ngIf="firstFormGroup.get('fullName')?.errors?.['required']"
                 >
-                  <div
-                    class="col-12 text-danger text-center"
-                    *ngIf="firstFormGroup.get('fullName')?.errors?.['required']"
-                  >
-                    Fullname is required
-                  </div>
+                  Fullname is required
                 </div>
+              </div>
               <mat-form-field class="col-12">
                 <mat-label>Email Address</mat-label>
                 <input
@@ -49,24 +48,23 @@
                   formControlName="email"
                   required
                   [class.is-valid]="
-                  firstFormGroup.get('email')?.valid &&
-                  firstFormGroup.get('email')?.touched
-                "
-                [class.is-invalid]="
-                  firstFormGroup.get('email')?.invalid &&
-                  firstFormGroup.get('email')?.touched
-                "
-              />
-              
-            </mat-form-field>
-            <div
+                    firstFormGroup.get('email')?.valid &&
+                    firstFormGroup.get('email')?.touched
+                  "
+                  [class.is-invalid]="
+                    firstFormGroup.get('email')?.invalid &&
+                    firstFormGroup.get('email')?.touched
+                  "
+                />
+              </mat-form-field>
+              <div
                 *ngIf="
                   firstFormGroup.get('email')?.invalid &&
                   firstFormGroup.get('email')?.touched
                 "
               >
                 <div
-                  class="text-danger  col-12 text-center"
+                  class="text-danger col-12 text-center"
                   *ngIf="firstFormGroup.get('email')?.errors?.['required']"
                 >
                   email is required
@@ -79,9 +77,29 @@
                   class="col-12"
                   placeholder="Phone Number"
                   formControlName="phone"
-                  required
+                  [class.is-valid]="
+                    firstFormGroup.get('phone')?.valid &&
+                    firstFormGroup.get('phone')?.touched
+                  "
+                  [class.is-invalid]="
+                    firstFormGroup.get('phone')?.invalid &&
+                    firstFormGroup.get('phone')?.touched
+                  "
                 />
               </mat-form-field>
+              <div
+                *ngIf="
+                  firstFormGroup.get('phone')?.invalid &&
+                  firstFormGroup.get('phone')?.touched
+                "
+              >
+                <div
+                  class="text-danger col-12 text-center"
+                  *ngIf="firstFormGroup.get('phone')?.errors?.['required']"
+                >
+                  Phone is required
+                </div>
+              </div>
               <mat-form-field class="col-12">
                 <mat-label>Password</mat-label>
                 <input
@@ -89,9 +107,29 @@
                   class="col-12"
                   placeholder="Password"
                   formControlName="password"
-                  required
+                  [class.is-valid]="
+                    firstFormGroup.get('password')?.valid &&
+                    firstFormGroup.get('password')?.touched
+                  "
+                  [class.is-invalid]="
+                    firstFormGroup.get('password')?.invalid &&
+                    firstFormGroup.get('password')?.touched
+                  "
                 />
               </mat-form-field>
+              <div
+                *ngIf="
+                  firstFormGroup.get('password')?.invalid &&
+                  firstFormGroup.get('password')?.touched
+                "
+              >
+                <div
+                  class="text-danger col-12 text-center"
+                  *ngIf="firstFormGroup.get('password')?.errors?.['required']"
+                >
+                  Password is required
+                </div>
+              </div>
 
               <mat-radio-group
                 id="demo-optional-label-group"
@@ -142,9 +180,29 @@
                   class="col-12"
                   placeholder="username"
                   formControlName="userName"
-                  required
+                  [class.is-valid]="
+                    secondFormGroup.get('userName')?.valid &&
+                    secondFormGroup.get('userName')?.touched
+                  "
+                  [class.is-invalid]="
+                    secondFormGroup.get('userName')?.invalid &&
+                    secondFormGroup.get('userName')?.touched
+                  "
                 />
               </mat-form-field>
+              <div
+                *ngIf="
+                  secondFormGroup.get('userName')?.invalid &&
+                  secondFormGroup.get('userName')?.touched
+                "
+              >
+                <div
+                  class="text-danger col-12 text-center"
+                  *ngIf="secondFormGroup.get('userName')?.errors?.['required']"
+                >
+                  UserName is required
+                </div>
+              </div>
               <mat-form-field class="col-12">
                 <mat-label>Date of Birth</mat-label>
                 <input
@@ -153,9 +211,29 @@
                   class="col-12"
                   placeholder="Date of birth"
                   formControlName="birth"
-                  required
+                  [class.is-valid]="
+                    secondFormGroup.get('birth')?.valid &&
+                    secondFormGroup.get('birth')?.touched
+                  "
+                  [class.is-invalid]="
+                    secondFormGroup.get('birth')?.invalid &&
+                    secondFormGroup.get('birth')?.touched
+                  "
                 />
               </mat-form-field>
+              <div
+                *ngIf="
+                  secondFormGroup.get('birth')?.invalid &&
+                  secondFormGroup.get('birth')?.touched
+                "
+              >
+                <div
+                  class="text-danger col-12 text-center"
+                  *ngIf="secondFormGroup.get('birth')?.errors?.['required']"
+                >
+                  Birth date is required
+                </div>
+              </div>
               <mat-form-field class="col-12">
                 <mat-label>Residential Address</mat-label>
                 <input
@@ -164,9 +242,29 @@
                   class="col-12"
                   placeholder="Ex. 1 Main St, New York, NY"
                   formControlName="address"
-                  required
+                  [class.is-valid]="
+                    secondFormGroup.get('address')?.valid &&
+                    secondFormGroup.get('address')?.touched
+                  "
+                  [class.is-invalid]="
+                    secondFormGroup.get('address')?.invalid &&
+                    secondFormGroup.get('address')?.touched
+                  "
                 />
               </mat-form-field>
+              <div
+                *ngIf="
+                  secondFormGroup.get('address')?.invalid &&
+                  secondFormGroup.get('address')?.touched
+                "
+              >
+                <div
+                  class="text-danger col-12 text-center"
+                  *ngIf="secondFormGroup.get('address')?.errors?.['required']"
+                >
+                  Address is required
+                </div>
+              </div>
               <mat-form-field class="col-12">
                 <mat-label>NIN / BVN</mat-label>
                 <input
@@ -175,16 +273,43 @@
                   class="col-12"
                   placeholder="NIN / BVN"
                   formControlName="nin_bvn"
-                  required
+                  [class.is-valid]="
+                    secondFormGroup.get('nin_bvn')?.valid &&
+                    secondFormGroup.get('nin_bvn')?.touched
+                  "
+                  [class.is-invalid]="
+                    secondFormGroup.get('nin_bvn')?.invalid &&
+                    secondFormGroup.get('nin_bvn')?.touched
+                  "
                 />
               </mat-form-field>
+              <div
+                *ngIf="
+                  secondFormGroup.get('nin_bvn')?.invalid &&
+                  secondFormGroup.get('nin_bvn')?.touched
+                "
+              >
+                <div
+                  class="text-danger col-12 text-center"
+                  *ngIf="secondFormGroup.get('nin_bvn')?.errors?.['required']"
+                >
+                  NiN or BVN is required
+                </div>
+              </div>
               <mat-form-field class="col-12">
                 <mat-label>Language</mat-label>
                 <select
                   formControlName="language"
                   class="px-3"
                   matNativeControl
-                  required
+                  [class.is-valid]="
+                    secondFormGroup.get('language')?.valid &&
+                    secondFormGroup.get('language')?.touched
+                  "
+                  [class.is-invalid]="
+                    secondFormGroup.get('language')?.invalid &&
+                    secondFormGroup.get('language')?.touched
+                  "
                 >
                   <option value="eng">English</option>
                   <option value="spa">Spanish</option>
@@ -231,38 +356,79 @@
                   <option value="ice">Icelandic</option>
                 </select>
               </mat-form-field>
-
+              <div
+                *ngIf="
+                  secondFormGroup.get('language')?.invalid &&
+                  secondFormGroup.get('language')?.touched
+                "
+              >
+                <div
+                  class="text-danger col-12 text-center"
+                  *ngIf="secondFormGroup.get('language')?.errors?.['required']"
+                >
+                  Language is required
+                </div>
+              </div>
               <mat-form-field class="col-12">
                 <mat-label>Marital Status</mat-label>
-                <input
-                  matInput
-                  class="col-12"
-                  placeholder="marital Status"
+                <select
                   formControlName="marital"
+                  class="px-3"
+                  matNativeControl
                   required
-                />
+                  [class.is-valid]="
+                    secondFormGroup.get('marital')?.valid &&
+                    secondFormGroup.get('marital')?.touched
+                  "
+                  [class.is-invalid]="
+                    secondFormGroup.get('marital')?.invalid &&
+                    secondFormGroup.get('marital')?.touched
+                  "
+                >
+                  <option class="py-2" value="single">Single</option>
+                  <option class="py-2" value="Married">Married</option>
+                  <option class="py-2" value="Divorced">Divorced</option>
+                </select>
               </mat-form-field>
-              <div class="float-end">
-                <button
-                  mat-button
-                  matStepperPrevious
-                  class="border text-center mt-3 border-none rounded"
+              <div
+                *ngIf="
+                  secondFormGroup.get('marital')?.invalid &&
+                  secondFormGroup.get('marital')?.touched
+                "
+              >
+                <div
+                  class="text-danger col-12 text-center"
+                  *ngIf="secondFormGroup.get('marital')?.errors?.['required']"
                 >
-                  <i
-                    style="color: rgb(25, 25, 133)"
-                    class="bi bi-arrow-left-circle-fill fs-2"
-                  ></i>
-                </button>
-                <button
-                  mat-button
-                  matStepperNext
-                  class="border mt-3 border-none rounded"
-                >
-                  <i
-                    style="color: rgb(25, 25, 133)"
-                    class="bi bi-arrow-right-circle-fill fs-2"
-                  ></i>
-                </button>
+                  marital is required
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between">
+                <div>
+                  <button
+                    mat-button
+                    matStepperPrevious
+                    class="border text-center mt-3 border-none rounded"
+                  >
+                    <i
+                      style="color: rgb(25, 25, 133)"
+                      class="bi bi-arrow-left-circle-fill fs-2"
+                    ></i>
+                  </button>
+                </div>
+                <div class="float-end mt-3">
+                  <button
+                    mat-button
+                    matStepperNext
+                    class="border border-none rounded"
+                  >
+                    <i
+                      style="color: rgb(25, 25, 133)"
+                      class="bi bi-arrow-right-circle-fill fs-2"
+                    ></i>
+                  </button>
+                </div>
               </div>
             </form>
           </div>
@@ -279,9 +445,30 @@
                     class="col-12"
                     placeholder="Email"
                     formControlName="userEmail"
-                    required
-                  />
-                </mat-form-field>
+                    [class.is-valid]="
+                    thirdFormGroup.get('userEmail')?.valid &&
+                    thirdFormGroup.get('userEmail')?.touched
+                  "
+                  [class.is-invalid]="
+                    thirdFormGroup.get('userEmail')?.invalid &&
+                    thirdFormGroup.get('userEmail')?.touched
+                  "
+                />
+                
+              </mat-form-field>
+              <div
+                  *ngIf="
+                    thirdFormGroup.get('userEmail')?.invalid &&
+                    thirdFormGroup.get('userEmail')?.touched
+                  "
+                >
+                  <div
+                    class="text-danger  col-12 text-center"
+                    *ngIf="thirdFormGroup.get('userEmail')?.errors?.['required']"
+                  >
+                    Email is required
+                  </div>
+                </div>
                 <mat-form-field class="col-12">
                   <mat-label>Password</mat-label>
                   <input
@@ -290,9 +477,30 @@
                     class="col-12"
                     placeholder="Password"
                     formControlName="userPass"
-                    required
-                  />
-                </mat-form-field>
+                    [class.is-valid]="
+                  thirdFormGroup.get('userPass')?.valid &&
+                  thirdFormGroup.get('userPass')?.touched
+                "
+                [class.is-invalid]="
+                  thirdFormGroup.get('userPass')?.invalid &&
+                  thirdFormGroup.get('userPass')?.touched
+                "
+              />
+              
+            </mat-form-field>
+            <div
+                *ngIf="
+                  thirdFormGroup.get('userPass')?.invalid &&
+                  thirdFormGroup.get('userPass')?.touched
+                "
+              >
+                <div
+                  class="text-danger  col-12 text-center"
+                  *ngIf="thirdFormGroup.get('userPass')?.errors?.['required']"
+                >
+                  Password is required
+                </div>
+              </div>
                 <p>
                   If you are not registered yet <b><a href="">Sign Up</a></b>
                 </p>
@@ -315,9 +523,7 @@
         </mat-step>
       </mat-horizontal-stepper>
     </div>
-    <div
-      class="col-md-6 col-12 d-md-block d-none mt-5 mt-md-0 text-center"
-    >
+    <div class="col-md-6 col-12 d-md-block d-none mt-5 mt-md-0 text-center">
       <div
         id="carouselExampleFade"
         class="carousel slide carousel-fade"

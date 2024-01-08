@@ -37,27 +37,28 @@ export class SignupComponent {
 
   constructor(
     public _formBuilder: FormBuilder,
-    public _matStepperIntl: MatStepperIntl
-  ) {}
+    public _matStepperIntl: MatStepperIntl,
+  ){}
   public firstFormGroup = this._formBuilder.group({
     fullName: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
-    phone: ['', [Validators.required, Validators.maxLength(11)]],
+    phone: [
+      '',
+      [Validators.required, Validators.maxLength(11), Validators.minLength(11)],
+    ],
     password: [
       '',
-      [
-        Validators.required,
-        Validators.minLength(6),
-        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/),
-      ],
+      [Validators.required, Validators.minLength(6), Validators.maxLength(6)],
     ],
     optionalLabel: [],
   });
+  
+
   public secondFormGroup = this._formBuilder.group({
     userName: ['', Validators.required],
     birth: ['', Validators.required],
     address: ['', Validators.required],
-    nin_bvn: ['', Validators.required],
+    nin_bvn: ['', [Validators.required,Validators.maxLength(11),Validators.minLength(11)]],
     language: ['', Validators.required],
     marital: ['', Validators.required],
   });
