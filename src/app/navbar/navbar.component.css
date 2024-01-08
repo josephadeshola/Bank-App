@@ -83,14 +83,13 @@ body {
       }
 }
 
-@media  (max-width: 480px) {
+@media  (max-width: 414px) {
     .image-circle {
-        margin-top: 4px;
         height: 40vh;
         width: 40vh;
         text-align: center;
         margin: auto;
-        margin-top: 10pc !important;
+        margin-top: 4pc !important;
         border-radius: 50%;
         background-color:rgb(25, 25, 133);
       }
