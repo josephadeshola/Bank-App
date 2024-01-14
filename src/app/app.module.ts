@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -30,7 +31,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     ReactiveFormsModule,
     MatRadioModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule
     // FormsModule
     
   ],

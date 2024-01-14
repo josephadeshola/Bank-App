@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatStepperIntl } from '@angular/material/stepper';
+import { BankingService } from '../services/banking.service';
 
 @Component({
   selector: 'app-signup',
@@ -26,69 +27,74 @@ export class SignupComponent {
   // login Details
   userEmail = '';
   userPass = '';
-
+  public response: any = {};
+  public message = '';
   // public firstFormGroup: any = '';
   first = '';
   optionalLabelText: string = '';
   optionalLabelTextChoices: string[] = ['Male', 'Female', 'Other'];
-  // firstFormRadio = this._formBuilder.group({
-  //   firstCtrl: ['', Validators.required],
-  // });
-
   constructor(
     public _formBuilder: FormBuilder,
     public _matStepperIntl: MatStepperIntl,
-  ){}
+    public bankingService: BankingService
+  ) { }
   public firstFormGroup = this._formBuilder.group({
-    fullName: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
+    fullName: ['Ayomide', Validators.required],
+    email: ['jooee2y@gmail.com', [Validators.required, Validators.email]],
     phone: [
-      '',
+      '08069697526',
       [Validators.required, Validators.maxLength(11), Validators.minLength(11)],
     ],
     password: [
-      '',
+      '557880',
       [Validators.required, Validators.minLength(6), Validators.maxLength(6)],
     ],
     optionalLabel: [],
-  });
-  
-
-  public secondFormGroup = this._formBuilder.group({
-    userName: ['', Validators.required],
-    birth: ['', Validators.required],
-    address: ['', Validators.required],
-    nin_bvn: ['', [Validators.required,Validators.maxLength(11),Validators.minLength(11)]],
-    language: ['', Validators.required],
-    marital: ['', Validators.required],
-  });
-  public thirdFormGroup = this._formBuilder.group({
-    userEmail: ['', [Validators.required, Validators.email]],
+    userName: ['joseph125d', Validators.required],
+    birth: ['08-25-2004', Validators.required],
+    address: ['Temidere 5 No 23 ilorin kwara state', Validators.required],
+    nin_bvn: [
+      '12132345678',
+      [Validators.required, Validators.maxLength(11), Validators.minLength(11)],
+    ],
+    language: ['English', Validators.required],
+    marital: ['Single', Validators.required],
+    userEmail: [
+      'Joaeeeey125d@gmail.com',
+      [Validators.required, Validators.email],
+    ],
     userPass: [
-      '',
-      [
-        Validators.required,
-        Validators.minLength(6), // Adjust the minimum length as needed
-        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/), // At least one lowercase, one uppercase, and one numeric character
-      ],
+      '557880',
+      [Validators.required, Validators.minLength(6), Validators.maxLength(6)],
     ],
   });
-
-  // secondFormGroup = this._formBuilder.group({
-  //   secondCtrl: ['', Validators.required],
-  // });
-
-  // ngOnInit() {
-  //   this.firstFormGroup = this._formBuilder.group({
-  //     firstCtrl: ['', Validators.required],
-  //   });
-  // }
   updateOptionalLabel() {
     this._matStepperIntl.optionalLabel = this.optionalLabelText;
     this._matStepperIntl.changes.next();
   }
 
   StartRegister() {
-    console.log(this.firstFormGroup.value);
+    if (this.firstFormGroup.valid) {
+        this.bankingService
+        .setUserCreate(this.firstFormGroup.value)
+        .subscribe(data=>{
+          this.response=data
+          if(this.response==true){
+           console.log("go to login");
+
+           
+          }
+          else{
+            this.message="Email already exist"
+            console.log(this.message);
+            
+          }
+
+        },
+        (error) => {
+          console.log('Error during registration', error);
+        }
+        );
+    }
   }
 }

@@ -2,177 +2,173 @@
   <div class="row mt-top">
     <div class="col-md-6 col-12">
       <mat-horizontal-stepper [labelPosition]="'bottom'">
-        <mat-step label="Sign Up">
-          <ng-template matStepLabel>
-            <h5>Sign-up</h5>
-          </ng-template>
-          <div class="">
-            <form [formGroup]="firstFormGroup">
-              <mat-form-field class="col-12">
-                <mat-label>Full Name</mat-label>
-                <input
-                  matInput
-                  class="col-12"
-                  placeholder="First name"
-                  formControlName="fullName"
-                  required
-                  [class.is-valid]="
-                    firstFormGroup.get('fullName')?.valid &&
-                    firstFormGroup.get('fullName')?.touched
-                  "
-                  [class.is-invalid]="
-                    firstFormGroup.get('fullName')?.invalid &&
-                    firstFormGroup.get('fullName')?.touched
-                  "
-                />
-              </mat-form-field>
-              <div
-                *ngIf="
+        <form #reactiveform="ngForm" [formGroup]="firstFormGroup">
+          <mat-step label="Sign Up">
+            <ng-template matStepLabel>
+              <h5>Sign-up</h5>
+            </ng-template>
+
+            <mat-form-field class="col-12">
+              <mat-label>Full Name</mat-label>
+              <input
+                matInput
+                class="col-12"
+                placeholder="First name"
+                formControlName="fullName"
+                required
+                [class.is-valid]="
+                  firstFormGroup.get('fullName')?.valid &&
+                  firstFormGroup.get('fullName')?.touched
+                "
+                [class.is-invalid]="
                   firstFormGroup.get('fullName')?.invalid &&
                   firstFormGroup.get('fullName')?.touched
                 "
-              >
-                <div
-                  class="col-12 text-danger text-center"
-                  *ngIf="firstFormGroup.get('fullName')?.errors?.['required']"
-                >
-                  Fullname is required
-                </div>
-              </div>
-              <mat-form-field class="col-12">
-                <mat-label>Email Address</mat-label>
-                <input
-                  matInput
-                  class="col-12"
-                  placeholder="Email Address"
-                  formControlName="email"
-                  required
-                  [class.is-valid]="
-                    firstFormGroup.get('email')?.valid &&
-                    firstFormGroup.get('email')?.touched
-                  "
-                  [class.is-invalid]="
-                    firstFormGroup.get('email')?.invalid &&
-                    firstFormGroup.get('email')?.touched
-                  "
-                />
-              </mat-form-field>
+              />
+            </mat-form-field>
+            <div
+              *ngIf="
+                firstFormGroup.get('fullName')?.invalid &&
+                firstFormGroup.get('fullName')?.touched
+              "
+            >
               <div
-                *ngIf="
+                class="col-12 text-danger text-center"
+                *ngIf="firstFormGroup.get('fullName')?.errors?.['required']"
+              >
+                Fullname is required
+              </div>
+            </div>
+            <mat-form-field class="col-12">
+              <mat-label>Email Address</mat-label>
+              <input
+                matInput
+                class="col-12"
+                placeholder="Email Address"
+                formControlName="email"
+                required
+                [class.is-valid]="
+                  firstFormGroup.get('email')?.valid &&
+                  firstFormGroup.get('email')?.touched
+                "
+                [class.is-invalid]="
                   firstFormGroup.get('email')?.invalid &&
                   firstFormGroup.get('email')?.touched
                 "
-              >
-                <div
-                  class="text-danger col-12 text-center"
-                  *ngIf="firstFormGroup.get('email')?.errors?.['required']"
-                >
-                  email is required
-                </div>
-              </div>
-              <mat-form-field class="col-12">
-                <mat-label>Phone Number</mat-label>
-                <input
-                  matInput
-                  class="col-12"
-                  placeholder="Phone Number"
-                  formControlName="phone"
-                  [class.is-valid]="
-                    firstFormGroup.get('phone')?.valid &&
-                    firstFormGroup.get('phone')?.touched
-                  "
-                  [class.is-invalid]="
-                    firstFormGroup.get('phone')?.invalid &&
-                    firstFormGroup.get('phone')?.touched
-                  "
-                />
-              </mat-form-field>
+              />
+            </mat-form-field>
+            <div
+              *ngIf="
+                firstFormGroup.get('email')?.invalid &&
+                firstFormGroup.get('email')?.touched
+              "
+            >
               <div
-                *ngIf="
+                class="text-danger col-12 text-center"
+                *ngIf="firstFormGroup.get('email')?.errors?.['required']"
+              >
+                email is required
+              </div>
+            </div>
+            <mat-form-field class="col-12">
+              <mat-label>Phone Number</mat-label>
+              <input
+                matInput
+                class="col-12"
+                placeholder="Phone Number"
+                formControlName="phone"
+                [class.is-valid]="
+                  firstFormGroup.get('phone')?.valid &&
+                  firstFormGroup.get('phone')?.touched
+                "
+                [class.is-invalid]="
                   firstFormGroup.get('phone')?.invalid &&
                   firstFormGroup.get('phone')?.touched
                 "
-              >
-                <div
-                  class="text-danger col-12 text-center"
-                  *ngIf="firstFormGroup.get('phone')?.errors?.['required']"
-                >
-                  Phone is required
-                </div>
-              </div>
-              <mat-form-field class="col-12">
-                <mat-label>Password</mat-label>
-                <input
-                  matInput
-                  class="col-12"
-                  placeholder="Password"
-                  formControlName="password"
-                  [class.is-valid]="
-                    firstFormGroup.get('password')?.valid &&
-                    firstFormGroup.get('password')?.touched
-                  "
-                  [class.is-invalid]="
-                    firstFormGroup.get('password')?.invalid &&
-                    firstFormGroup.get('password')?.touched
-                  "
-                />
-              </mat-form-field>
+              />
+            </mat-form-field>
+            <div
+              *ngIf="
+                firstFormGroup.get('phone')?.invalid &&
+                firstFormGroup.get('phone')?.touched
+              "
+            >
               <div
-                *ngIf="
+                class="text-danger col-12 text-center"
+                *ngIf="firstFormGroup.get('phone')?.errors?.['required']"
+              >
+                Phone is required
+              </div>
+            </div>
+            <mat-form-field class="col-12">
+              <mat-label>Password</mat-label>
+              <input
+                matInput
+                class="col-12"
+                placeholder="Password"
+                formControlName="password"
+                [class.is-valid]="
+                  firstFormGroup.get('password')?.valid &&
+                  firstFormGroup.get('password')?.touched
+                "
+                [class.is-invalid]="
                   firstFormGroup.get('password')?.invalid &&
                   firstFormGroup.get('password')?.touched
                 "
+              />
+            </mat-form-field>
+            <div
+              *ngIf="
+                firstFormGroup.get('password')?.invalid &&
+                firstFormGroup.get('password')?.touched
+              "
+            >
+              <div
+                class="text-danger col-12 text-center"
+                *ngIf="firstFormGroup.get('password')?.errors?.['required']"
               >
-                <div
-                  class="text-danger col-12 text-center"
-                  *ngIf="firstFormGroup.get('password')?.errors?.['required']"
-                >
-                  Password is required
-                </div>
+                maximum number of 6
               </div>
+            </div>
 
-              <mat-radio-group
-                id="demo-optional-label-group"
-                class="demo-radio-group"
-                formControlName="optionalLabel"
-                (change)="updateOptionalLabel()"
+            <mat-radio-group
+              id="demo-optional-label-group"
+              class="demo-radio-group"
+              formControlName="optionalLabel"
+              (change)="updateOptionalLabel()"
+            >
+              <mat-radio-button
+                *ngFor="let optionalLabelTextChoice of optionalLabelTextChoices"
+                [value]="optionalLabelTextChoice"
+                >{{ optionalLabelTextChoice }}</mat-radio-button
               >
-                <mat-radio-button
-                  *ngFor="
-                    let optionalLabelTextChoice of optionalLabelTextChoices
-                  "
-                  [value]="optionalLabelTextChoice"
-                  >{{ optionalLabelTextChoice }}</mat-radio-button
-                >
 
-                <p style="color: rgb(25, 25, 133)">
-                  I agree to the <b>Terms & conditions</b>
-                  <input class="ms-2 mt-2" type="checkbox" />
-                </p>
-                <p class="mt-3">
-                  Already have an account
-                  <b><a style="color: rgb(25, 25, 133)" href="">Login</a></b>
-                </p>
-              </mat-radio-group>
-              <div class="float-end">
-                <button
-                  mat-button
-                  matStepperNext
-                  (click)="StartRegister()"
-                  class="border text-center mt-3 border-none rounded"
-                >
-                  <i
-                    style="color: rgb(25, 25, 133)"
-                    class="bi bi-arrow-right-circle-fill fs-2"
-                  ></i>
-                </button>
-              </div>
-            </form>
-          </div>
-        </mat-step>
-        <mat-step label="Personal Data">
-          <div class="col-12">
-            <form [formGroup]="secondFormGroup">
+              <p style="color: rgb(25, 25, 133)">
+                I agree to the <b>Terms & conditions</b>
+                <input class="ms-2 mt-2" type="checkbox" />
+              </p>
+              <p class="mt-3">
+                Already have an account
+                <b><a style="color: rgb(25, 25, 133)" href="">Login</a></b>
+              </p>
+            </mat-radio-group>
+            <div class="float-end">
+              <button
+                mat-button
+                matStepperNext
+                type="submit"
+                
+                class="border text-center mt-3 border-none rounded"
+              >
+                <i
+                  style="color: rgb(25, 25, 133)"
+                  class="bi bi-arrow-right-circle-fill fs-2"
+                ></i>
+              </button>
+            </div>
+          </mat-step>
+          <mat-step label="Personal Data">
+            <div class="col-12">
               <mat-form-field class="col-12">
                 <mat-label>username</mat-label>
                 <input
@@ -181,24 +177,24 @@
                   placeholder="username"
                   formControlName="userName"
                   [class.is-valid]="
-                    secondFormGroup.get('userName')?.valid &&
-                    secondFormGroup.get('userName')?.touched
+                    firstFormGroup.get('userName')?.valid &&
+                    firstFormGroup.get('userName')?.touched
                   "
                   [class.is-invalid]="
-                    secondFormGroup.get('userName')?.invalid &&
-                    secondFormGroup.get('userName')?.touched
+                    firstFormGroup.get('userName')?.invalid &&
+                    firstFormGroup.get('userName')?.touched
                   "
                 />
               </mat-form-field>
               <div
                 *ngIf="
-                  secondFormGroup.get('userName')?.invalid &&
-                  secondFormGroup.get('userName')?.touched
+                  firstFormGroup.get('userName')?.invalid &&
+                  firstFormGroup.get('userName')?.touched
                 "
               >
                 <div
                   class="text-danger col-12 text-center"
-                  *ngIf="secondFormGroup.get('userName')?.errors?.['required']"
+                  *ngIf="firstFormGroup.get('userName')?.errors?.['required']"
                 >
                   UserName is required
                 </div>
@@ -212,24 +208,24 @@
                   placeholder="Date of birth"
                   formControlName="birth"
                   [class.is-valid]="
-                    secondFormGroup.get('birth')?.valid &&
-                    secondFormGroup.get('birth')?.touched
+                    firstFormGroup.get('birth')?.valid &&
+                    firstFormGroup.get('birth')?.touched
                   "
                   [class.is-invalid]="
-                    secondFormGroup.get('birth')?.invalid &&
-                    secondFormGroup.get('birth')?.touched
+                    firstFormGroup.get('birth')?.invalid &&
+                    firstFormGroup.get('birth')?.touched
                   "
                 />
               </mat-form-field>
               <div
                 *ngIf="
-                  secondFormGroup.get('birth')?.invalid &&
-                  secondFormGroup.get('birth')?.touched
+                  firstFormGroup.get('birth')?.invalid &&
+                  firstFormGroup.get('birth')?.touched
                 "
               >
                 <div
                   class="text-danger col-12 text-center"
-                  *ngIf="secondFormGroup.get('birth')?.errors?.['required']"
+                  *ngIf="firstFormGroup.get('birth')?.errors?.['required']"
                 >
                   Birth date is required
                 </div>
@@ -243,24 +239,24 @@
                   placeholder="Ex. 1 Main St, New York, NY"
                   formControlName="address"
                   [class.is-valid]="
-                    secondFormGroup.get('address')?.valid &&
-                    secondFormGroup.get('address')?.touched
+                    firstFormGroup.get('address')?.valid &&
+                    firstFormGroup.get('address')?.touched
                   "
                   [class.is-invalid]="
-                    secondFormGroup.get('address')?.invalid &&
-                    secondFormGroup.get('address')?.touched
+                    firstFormGroup.get('address')?.invalid &&
+                    firstFormGroup.get('address')?.touched
                   "
                 />
               </mat-form-field>
               <div
                 *ngIf="
-                  secondFormGroup.get('address')?.invalid &&
-                  secondFormGroup.get('address')?.touched
+                  firstFormGroup.get('address')?.invalid &&
+                  firstFormGroup.get('address')?.touched
                 "
               >
                 <div
                   class="text-danger col-12 text-center"
-                  *ngIf="secondFormGroup.get('address')?.errors?.['required']"
+                  *ngIf="firstFormGroup.get('address')?.errors?.['required']"
                 >
                   Address is required
                 </div>
@@ -274,24 +270,24 @@
                   placeholder="NIN / BVN"
                   formControlName="nin_bvn"
                   [class.is-valid]="
-                    secondFormGroup.get('nin_bvn')?.valid &&
-                    secondFormGroup.get('nin_bvn')?.touched
+                    firstFormGroup.get('nin_bvn')?.valid &&
+                    firstFormGroup.get('nin_bvn')?.touched
                   "
                   [class.is-invalid]="
-                    secondFormGroup.get('nin_bvn')?.invalid &&
-                    secondFormGroup.get('nin_bvn')?.touched
+                    firstFormGroup.get('nin_bvn')?.invalid &&
+                    firstFormGroup.get('nin_bvn')?.touched
                   "
                 />
               </mat-form-field>
               <div
                 *ngIf="
-                  secondFormGroup.get('nin_bvn')?.invalid &&
-                  secondFormGroup.get('nin_bvn')?.touched
+                  firstFormGroup.get('nin_bvn')?.invalid &&
+                  firstFormGroup.get('nin_bvn')?.touched
                 "
               >
                 <div
                   class="text-danger col-12 text-center"
-                  *ngIf="secondFormGroup.get('nin_bvn')?.errors?.['required']"
+                  *ngIf="firstFormGroup.get('nin_bvn')?.errors?.['required']"
                 >
                   NiN or BVN is required
                 </div>
@@ -303,12 +299,12 @@
                   class="px-3"
                   matNativeControl
                   [class.is-valid]="
-                    secondFormGroup.get('language')?.valid &&
-                    secondFormGroup.get('language')?.touched
+                    firstFormGroup.get('language')?.valid &&
+                    firstFormGroup.get('language')?.touched
                   "
                   [class.is-invalid]="
-                    secondFormGroup.get('language')?.invalid &&
-                    secondFormGroup.get('language')?.touched
+                    firstFormGroup.get('language')?.invalid &&
+                    firstFormGroup.get('language')?.touched
                   "
                 >
                   <option value="eng">English</option>
@@ -358,13 +354,13 @@
               </mat-form-field>
               <div
                 *ngIf="
-                  secondFormGroup.get('language')?.invalid &&
-                  secondFormGroup.get('language')?.touched
+                  firstFormGroup.get('language')?.invalid &&
+                  firstFormGroup.get('language')?.touched
                 "
               >
                 <div
                   class="text-danger col-12 text-center"
-                  *ngIf="secondFormGroup.get('language')?.errors?.['required']"
+                  *ngIf="firstFormGroup.get('language')?.errors?.['required']"
                 >
                   Language is required
                 </div>
@@ -377,12 +373,12 @@
                   matNativeControl
                   required
                   [class.is-valid]="
-                    secondFormGroup.get('marital')?.valid &&
-                    secondFormGroup.get('marital')?.touched
+                    firstFormGroup.get('marital')?.valid &&
+                    firstFormGroup.get('marital')?.touched
                   "
                   [class.is-invalid]="
-                    secondFormGroup.get('marital')?.invalid &&
-                    secondFormGroup.get('marital')?.touched
+                    firstFormGroup.get('marital')?.invalid &&
+                    firstFormGroup.get('marital')?.touched
                   "
                 >
                   <option class="py-2" value="single">Single</option>
@@ -392,13 +388,13 @@
               </mat-form-field>
               <div
                 *ngIf="
-                  secondFormGroup.get('marital')?.invalid &&
-                  secondFormGroup.get('marital')?.touched
+                  firstFormGroup.get('marital')?.invalid &&
+                  firstFormGroup.get('marital')?.touched
                 "
               >
                 <div
                   class="text-danger col-12 text-center"
-                  *ngIf="secondFormGroup.get('marital')?.errors?.['required']"
+                  *ngIf="firstFormGroup.get('marital')?.errors?.['required']"
                 >
                   marital is required
                 </div>
@@ -430,97 +426,93 @@
                   </button>
                 </div>
               </div>
-            </form>
-          </div>
-        </mat-step>
-        <mat-step label="Login">
-          <div>
+            </div>
+          </mat-step>
+          <mat-step label="Login">
             <div class="col-12">
-              <form [formGroup]="thirdFormGroup">
-                <mat-form-field class="col-12">
-                  <mat-label>Email Address</mat-label>
-                  <input
-                    matInput
-                    type="email"
-                    class="col-12"
-                    placeholder="Email"
-                    formControlName="userEmail"
-                    [class.is-valid]="
-                    thirdFormGroup.get('userEmail')?.valid &&
-                    thirdFormGroup.get('userEmail')?.touched
+              <mat-form-field class="col-12">
+                <mat-label>Email Address</mat-label>
+                <input
+                  matInput
+                  type="email"
+                  class="col-12"
+                  placeholder="Email"
+                  formControlName="userEmail"
+                  [class.is-valid]="
+                    firstFormGroup.get('userEmail')?.valid &&
+                    firstFormGroup.get('userEmail')?.touched
                   "
                   [class.is-invalid]="
-                    thirdFormGroup.get('userEmail')?.invalid &&
-                    thirdFormGroup.get('userEmail')?.touched
+                    firstFormGroup.get('userEmail')?.invalid &&
+                    firstFormGroup.get('userEmail')?.touched
                   "
                 />
-                
               </mat-form-field>
               <div
-                  *ngIf="
-                    thirdFormGroup.get('userEmail')?.invalid &&
-                    thirdFormGroup.get('userEmail')?.touched
-                  "
-                >
-                  <div
-                    class="text-danger  col-12 text-center"
-                    *ngIf="thirdFormGroup.get('userEmail')?.errors?.['required']"
-                  >
-                    Email is required
-                  </div>
-                </div>
-                <mat-form-field class="col-12">
-                  <mat-label>Password</mat-label>
-                  <input
-                    matInput
-                    type="password"
-                    class="col-12"
-                    placeholder="Password"
-                    formControlName="userPass"
-                    [class.is-valid]="
-                  thirdFormGroup.get('userPass')?.valid &&
-                  thirdFormGroup.get('userPass')?.touched
-                "
-                [class.is-invalid]="
-                  thirdFormGroup.get('userPass')?.invalid &&
-                  thirdFormGroup.get('userPass')?.touched
-                "
-              />
-              
-            </mat-form-field>
-            <div
                 *ngIf="
-                  thirdFormGroup.get('userPass')?.invalid &&
-                  thirdFormGroup.get('userPass')?.touched
+                  firstFormGroup.get('userEmail')?.invalid &&
+                  firstFormGroup.get('userEmail')?.touched
                 "
               >
                 <div
-                  class="text-danger  col-12 text-center"
-                  *ngIf="thirdFormGroup.get('userPass')?.errors?.['required']"
+                  class="text-danger col-12 text-center"
+                  *ngIf="firstFormGroup.get('userEmail')?.errors?.['required']"
+                >
+                  Email is required
+                </div>
+              </div>
+              <mat-form-field class="col-12">
+                <mat-label>Password</mat-label>
+                <input
+                  matInput
+                  type="password"
+                  class="col-12"
+                  placeholder="Password"
+                  formControlName="userPass"
+                  [class.is-valid]="
+                    firstFormGroup.get('userPass')?.valid &&
+                    firstFormGroup.get('userPass')?.touched
+                  "
+                  [class.is-invalid]="
+                    firstFormGroup.get('userPass')?.invalid &&
+                    firstFormGroup.get('userPass')?.touched
+                  "
+                />
+              </mat-form-field>
+              <div
+                *ngIf="
+                  firstFormGroup.get('userPass')?.invalid &&
+                  firstFormGroup.get('userPass')?.touched
+                "
+              >
+                <div
+                  class="text-danger col-12 text-center"
+                  *ngIf="firstFormGroup.get('userPass')?.errors?.['required']"
                 >
                   Password is required
                 </div>
               </div>
-                <p>
-                  If you are not registered yet <b><a href="">Sign Up</a></b>
-                </p>
-                <button class="btn-color btn">Register Account</button>
-                <div class="float-end mt-5">
-                  <button
-                    mat-button
-                    matStepperPrevious
-                    class="border text-center mt-3 border-none rounded"
-                  >
-                    <i
-                      style="color: rgb(25, 25, 133)"
-                      class="bi bi-arrow-left-circle-fill fs-2"
-                    ></i>
-                  </button>
-                </div>
-              </form>
+              <p>
+                If you are not registered yet <b><a href="">Sign Up</a></b>
+              </p>
+              <button class="btn-color btn"
+              [disabled]="reactiveform.invalid"
+                (click)="StartRegister()">Register Account</button>
+              <div class="float-end mt-5">
+                <button
+                  mat-button
+                  matStepperPrevious
+                  class="border text-center mt-3 border-none rounded"
+                >
+                  <i
+                    style="color: rgb(25, 25, 133)"
+                    class="bi bi-arrow-left-circle-fill fs-2"
+                  ></i>
+                </button>
+              </div>
             </div>
-          </div>
-        </mat-step>
+          </mat-step>
+        </form>
       </mat-horizontal-stepper>
     </div>
     <div class="col-md-6 col-12 d-md-block d-none mt-5 mt-md-0 text-center">
