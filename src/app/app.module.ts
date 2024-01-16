@@ -16,6 +16,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AngularToastifyModule } from 'angular-toastify'; 
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, NavbarComponent, SignupComponent],
@@ -32,7 +33,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatRadioModule,
     MatSelectModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    AngularToastifyModule,
+    
   
   ],
   providers: [],
