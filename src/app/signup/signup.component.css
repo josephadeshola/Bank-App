@@ -18,3 +18,11 @@
   height: 2pc;
   
 }
+mat-form-field {
+  margin-right: 12px;
+}
+.custom-snackbar-class{
+  background-color: red !important; 
+  color: white; 
+  font-size: 56px !important; 
+}
