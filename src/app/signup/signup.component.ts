@@ -41,25 +41,27 @@ export class SignupComponent {
     public toast: ToastService
   ) { }
   public firstFormGroup = this._formBuilder.group({
-    fullName: ['Ayomide', Validators.required],
-    email: ['ayujo@gmail.com', [Validators.required, Validators.email]],
+    fullName: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
     phone: [
-      '08069697526',
+      '',
       [Validators.required, Validators.maxLength(11), Validators.minLength(11)],
     ],
     password: [
-      '557880',
+      '',
       [Validators.required, Validators.minLength(6), Validators.maxLength(6)],
     ],
-    userName: ['joseph125d', Validators.required],
-    birth: ['08-25-2004', Validators.required],
-    address: ['Temidere 5 No 23 ilorin kwara state', Validators.required],
+    termsAndConditions: [false, Validators.requiredTrue],
+    userName: ['', Validators.required],
+    birth: ['', Validators.required],
+    address: ['', Validators.required],
     nin_bvn: [
-      '12132345678',
+      '',
       [Validators.required, Validators.maxLength(11), Validators.minLength(11)],
     ],
-    language: ['English', Validators.required],
-    marital: ['Single', Validators.required],
+    language: ['', Validators.required],
+    gender:['',Validators.required],
+    marital: ['', Validators.required],
     // userEmail: ['ayojjjjjjy@gmail.com', [Validators.required, Validators.email]],
     // userPass: [
     //   '557880',
@@ -75,10 +77,11 @@ export class SignupComponent {
       this.bankingService.setUserCreate(this.firstFormGroup.value).subscribe(data => {
         this.response = data;
         console.log(data);
-        
+
         if (this.response.status == true) {
-          alert("good")
-          this.toast.success('message');
+          this.SnackBar.open('Registration Successful', '', {
+            duration: 4000,
+          });
         }
         else {
           this.message = "email already exist"
@@ -88,7 +91,6 @@ export class SignupComponent {
         }
       }, (error) => {
         console.log(error, "error day");
-
       }
       );
     }

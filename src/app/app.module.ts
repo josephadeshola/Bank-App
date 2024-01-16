@@ -16,10 +16,11 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { AngularToastifyModule } from 'angular-toastify'; 
+import { AngularToastifyModule } from 'angular-toastify';
+import { LoginComponent } from './login/login.component'; 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavbarComponent, SignupComponent],
+  declarations: [AppComponent, HomeComponent, NavbarComponent, SignupComponent, LoginComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
