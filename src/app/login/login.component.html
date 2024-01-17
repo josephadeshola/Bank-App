@@ -1,1 +1,75 @@
-<p>login works!</p>
+<form #reactiveform="ngForm" class="" [formGroup]="firstFormGroup">
+  <div class="col-6 mx-auto mt-5 py-2">
+    <h4 class="fw-bold fs-4 text-center ">Login</h4>
+    <mat-form-field class="col-12">
+      <mat-label>Email Address</mat-label>
+      <input
+        matInput
+        type="email"
+        class="col-12"
+        placeholder="Email"
+        formControlName="userEmail"
+        [class.is-valid]="
+          firstFormGroup.get('userEmail')?.valid &&
+          firstFormGroup.get('userEmail')?.touched
+        "
+        [class.is-invalid]="
+          firstFormGroup.get('userEmail')?.invalid &&
+          firstFormGroup.get('userEmail')?.touched
+        "
+      />
+    </mat-form-field>
+    <div
+      *ngIf="
+        firstFormGroup.get('userEmail')?.invalid &&
+        firstFormGroup.get('userEmail')?.touched
+      "
+    >
+      <div
+        class="text-danger col-12 text-center"
+        *ngIf="firstFormGroup.get('userEmail')?.errors?.['required']"
+      >
+        Email is required
+      </div>
+    </div>
+    <mat-form-field class="col-12">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        type="password"
+        class="col-12"
+        placeholder="Password"
+        formControlName="userPass"
+        [class.is-valid]="
+          firstFormGroup.get('userPass')?.valid &&
+          firstFormGroup.get('userPass')?.touched
+        "
+        [class.is-invalid]="
+          firstFormGroup.get('userPass')?.invalid &&
+          firstFormGroup.get('userPass')?.touched
+        "
+      />
+    </mat-form-field>
+    <div
+      *ngIf="
+        firstFormGroup.get('userPass')?.invalid &&
+        firstFormGroup.get('userPass')?.touched
+      "
+    >
+      <div
+        class="text-danger col-12 text-center"
+        *ngIf="firstFormGroup.get('userPass')?.errors?.['required']"
+      >
+        Password is required
+      </div>
+    </div>
+    <button
+      class="btn-color mt-2 w-100 btn text-light"
+      mat-stroked-button
+      (click)="StartLogin()"
+    >
+      Login Account
+    </button>
+  </div>
+</form>
+]

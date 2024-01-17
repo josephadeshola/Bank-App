@@ -60,18 +60,9 @@ export class SignupComponent {
       [Validators.required, Validators.maxLength(11), Validators.minLength(11)],
     ],
     language: ['', Validators.required],
-    gender:['',Validators.required],
+    gender: ['', Validators.required],
     marital: ['', Validators.required],
-    // userEmail: ['ayojjjjjjy@gmail.com', [Validators.required, Validators.email]],
-    // userPass: [
-    //   '557880',
-    //   [Validators.required, Validators.minLength(6), Validators.maxLength(6)],
-    // ],
   });
-  // updateOptionalLabel() {
-  //   this._matStepperIntl.optionalLabel = this.optionalLabelText;
-  //   this._matStepperIntl.changes.next();
-  // }
   StartRegister() {
     if (this.firstFormGroup.valid) {
       this.bankingService.setUserCreate(this.firstFormGroup.value).subscribe(data => {
