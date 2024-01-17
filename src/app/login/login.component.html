@@ -1,6 +1,6 @@
-<form #reactiveform="ngForm" class="" [formGroup]="firstFormGroup">
+<form  class="" [formGroup]="firstFormGroup">
   <div class="col-md-6 col-10 mx-auto mt-5 py-md-2 py-5">
-    <h4 class="fw-bold fs-4 text-center ">Login</h4>
+    <h4 class="fw-bold fs-5 pb-3">Login</h4>
     <mat-form-field class="col-12">
       <mat-label>Email Address</mat-label>
       <input
@@ -65,11 +65,18 @@
     </div>
     <button
       class="btn-color mt-2 w-100 btn text-light"
+      type="submit"
       mat-stroked-button
       (click)="StartLogin()"
     >
       Login Account
     </button>
+    <p class="mt-3">
+        If you are not registered yet
+        <a style="color: rgb(25, 25, 133)" class="fw-bold" routerLink="/create"
+          >Create Account</a
+        >
+      </p>
   </div>
 </form>
 ]

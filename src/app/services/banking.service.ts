@@ -11,4 +11,5 @@ export class BankingService {
   setUserCreate(obj: any){
     return this.http.post('http://localhost/bankdatabase/signup.php', obj);
   }
+ 
 }

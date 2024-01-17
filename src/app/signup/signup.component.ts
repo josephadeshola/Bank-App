@@ -4,6 +4,7 @@ import { MatStepperIntl } from '@angular/material/stepper';
 import { BankingService } from '../services/banking.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ToastService } from 'angular-toastify';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -38,30 +39,31 @@ export class SignupComponent {
     public _matStepperIntl: MatStepperIntl,
     public bankingService: BankingService,
     public SnackBar: MatSnackBar,
-    public toast: ToastService
+    public toast: ToastService,
+    public route:Router
   ) { }
   public firstFormGroup = this._formBuilder.group({
-    fullName: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
+    fullName: ['fola', Validators.required],
+    email: ['kfolai@gmail.com', [Validators.required, Validators.email]],
     phone: [
-      '',
+      '07060670474',
       [Validators.required, Validators.maxLength(11), Validators.minLength(11)],
     ],
     password: [
-      '',
-      [Validators.required, Validators.minLength(6), Validators.maxLength(6)],
+      '69697527',
+      [Validators.required, Validators.minLength(6), Validators.maxLength(40)],
     ],
     termsAndConditions: [false, Validators.requiredTrue],
-    userName: ['', Validators.required],
-    birth: ['', Validators.required],
-    address: ['', Validators.required],
+    userName: ['ay.com', Validators.required],
+    birth: ['2005-02-9', Validators.required],
+    address: ['temidere 23 ilorin kwara state', Validators.required],
     nin_bvn: [
-      '',
+      '33456213535',
       [Validators.required, Validators.maxLength(11), Validators.minLength(11)],
     ],
-    language: ['', Validators.required],
-    gender: ['', Validators.required],
-    marital: ['', Validators.required],
+    language: ['yoruba', Validators.required],
+    gender: ['male', Validators.required],
+    marital: ['single', Validators.required],
   });
   StartRegister() {
     if (this.firstFormGroup.valid) {
@@ -73,6 +75,7 @@ export class SignupComponent {
           this.SnackBar.open('Registration Successful', '', {
             duration: 4000,
           });
+          this.route.navigate(["/login"])
         }
         else {
           this.message = "email already exist"
@@ -80,7 +83,8 @@ export class SignupComponent {
             duration: 4000
           });
         }
-      }, (error) => {
+
+      },(error) => {
         console.log(error, "error day");
       }
       );
