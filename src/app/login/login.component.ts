@@ -1,8 +1,6 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { MatStepperIntl } from '@angular/material/stepper';
 import { LoginService } from '../services/login.service';
-
 
 @Component({
   selector: 'app-login',
@@ -10,46 +8,34 @@ import { LoginService } from '../services/login.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  userEmail = '';
-  userPass = '';
+  // login Details
+  email = '';
+  password = '';
   public result: any = {};
 
   constructor(
     public formbuild: FormBuilder,
-    public Stepper: MatStepperIntl,
-    public loginService: LoginService,
+    public loginservice:LoginService
+  ) {}
 
-  ) { }
-  public firstFormGroup = this.formbuild.group({
-    userEmail: ['', [Validators.required, Validators.email]],
-    userPass: [
-      '',
+  public secondFormGroup = this.formbuild.group({
+    email: ['joy12d@gmail.com', [Validators.required, Validators.email]],
+    password: [
+      '123456',
       [Validators.required, Validators.minLength(6), Validators.maxLength(40)],
     ],
   });
+
   StartLogin() {
-    if (this.firstFormGroup.valid) {
-      console.log(this.firstFormGroup);
-      
-      this.loginService.setUserLogin(this.firstFormGroup.value).subscribe(
-        (data) => {
-          console.log(data);
-          
-          // if (this.result.status == true) {
-          //   alert('login successful');
-          // } else {
-          //   console.log('Wrong');
-          // }
-        },
-        (error) => {
-          console.log(error, 'error day');
-        }
-      )
-   
+    if (this.secondFormGroup.valid) {
+      const email = this.secondFormGroup.get('email')?.value;
+      const password = this.secondFormGroup.get('password')?.value;
+      this.loginservice
+        .setUserLogin({ email, password })
+        .subscribe((data) => {
+          this.result = data;
+          console.log(this.result);
+        });
     }
   }
-  // ngOnDestroy() {
-  //   // Unsubscribe from subscriptions to avoid memory leaks
-  //   this.sub.unsubscribe();
-  // }
 }

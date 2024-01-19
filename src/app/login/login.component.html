@@ -1,4 +1,4 @@
-<form  class="" [formGroup]="firstFormGroup">
+<form [formGroup]="secondFormGroup" (ngSubmit)="StartLogin()">
   <div class="col-md-6 col-10 mx-auto mt-5 py-md-2 py-5">
     <h4 class="fw-bold fs-5 pb-3">Login</h4>
     <mat-form-field class="col-12">
@@ -8,26 +8,26 @@
         type="email"
         class="col-12"
         placeholder="Email"
-        formControlName="userEmail"
+        formControlName="email"
         [class.is-valid]="
-          firstFormGroup.get('userEmail')?.valid &&
-          firstFormGroup.get('userEmail')?.touched
+          secondFormGroup.get('email')?.valid &&
+          secondFormGroup.get('email')?.touched
         "
         [class.is-invalid]="
-          firstFormGroup.get('userEmail')?.invalid &&
-          firstFormGroup.get('userEmail')?.touched
+          secondFormGroup.get('email')?.invalid &&
+          secondFormGroup.get('email')?.touched
         "
       />
     </mat-form-field>
     <div
       *ngIf="
-        firstFormGroup.get('userEmail')?.invalid &&
-        firstFormGroup.get('userEmail')?.touched
+        secondFormGroup.get('email')?.invalid &&
+        secondFormGroup.get('email')?.touched
       "
     >
       <div
         class="text-danger col-12 text-center"
-        *ngIf="firstFormGroup.get('userEmail')?.errors?.['required']"
+        *ngIf="secondFormGroup.get('email')?.errors?.['required']"
       >
         Email is required
       </div>
@@ -36,29 +36,29 @@
       <mat-label>Password</mat-label>
       <input
         matInput
-        type="password"
         class="col-12"
+        type="password"
         placeholder="Password"
-        formControlName="userPass"
+        formControlName="password"
         [class.is-valid]="
-          firstFormGroup.get('userPass')?.valid &&
-          firstFormGroup.get('userPass')?.touched
+          secondFormGroup.get('password')?.valid &&
+          secondFormGroup.get('password')?.touched
         "
         [class.is-invalid]="
-          firstFormGroup.get('userPass')?.invalid &&
-          firstFormGroup.get('userPass')?.touched
+          secondFormGroup.get('password')?.invalid &&
+          secondFormGroup.get('password')?.touched
         "
       />
     </mat-form-field>
     <div
       *ngIf="
-        firstFormGroup.get('userPass')?.invalid &&
-        firstFormGroup.get('userPass')?.touched
+        secondFormGroup.get('password')?.invalid &&
+        secondFormGroup.get('password')?.touched
       "
     >
       <div
         class="text-danger col-12 text-center"
-        *ngIf="firstFormGroup.get('userPass')?.errors?.['required']"
+        *ngIf="secondFormGroup.get('password')?.errors?.['required']"
       >
         Password is required
       </div>
@@ -66,8 +66,6 @@
     <button
       class="btn-color mt-2 w-100 btn text-light"
       type="submit"
-      mat-stroked-button
-      (click)="StartLogin()"
     >
       Login Account
     </button>
@@ -79,4 +77,4 @@
       </p>
   </div>
 </form>
-]
+

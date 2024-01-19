@@ -27,9 +27,7 @@ export class SignupComponent {
   ninBvn = '';
   language = '';
   marital = '';
-  // login Details
-  userEmail = '';
-  userPass = '';
+ 
   public response: any = {};
   public message = '';
   public style = 'error';
@@ -44,21 +42,21 @@ export class SignupComponent {
   ) { }
   public firstFormGroup = this._formBuilder.group({
     fullName: ['fola', Validators.required],
-    email: ['kfolai@gmail.com', [Validators.required, Validators.email]],
+    email: ['joy125d@gmail.com', [Validators.required, Validators.email]],
     phone: [
       '07060670474',
       [Validators.required, Validators.maxLength(11), Validators.minLength(11)],
     ],
     password: [
-      '69697527',
+      '123456',
       [Validators.required, Validators.minLength(6), Validators.maxLength(40)],
     ],
-    termsAndConditions: [false, Validators.requiredTrue],
+    termsAndConditions: [ false, Validators.requiredTrue],
     userName: ['ay.com', Validators.required],
     birth: ['2005-02-9', Validators.required],
     address: ['temidere 23 ilorin kwara state', Validators.required],
     nin_bvn: [
-      '33456213535',
+      '3345621',
       [Validators.required, Validators.maxLength(11), Validators.minLength(11)],
     ],
     language: ['yoruba', Validators.required],
@@ -75,7 +73,7 @@ export class SignupComponent {
           this.SnackBar.open('Registration Successful', '', {
             duration: 4000,
           });
-          this.route.navigate(["/login"])
+          // this.route.navigate(["/login"])
         }
         else {
           this.message = "email already exist"
@@ -83,7 +81,6 @@ export class SignupComponent {
             duration: 4000
           });
         }
-
       },(error) => {
         console.log(error, "error day");
       }

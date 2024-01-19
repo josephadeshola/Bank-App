@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class LoginService {
 
-  constructor(private http:HttpClient) { }
+  constructor(public http:HttpClient) { }
   setUserLogin(obj:any){
-    return this.http.post("http://localhost/bankdatabase/login.php",obj)
+    return this.http.post("http://localhost/bankdatabase/signin.php", obj);
   }
 }
