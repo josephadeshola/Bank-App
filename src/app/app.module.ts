@@ -17,10 +17,11 @@ import {MatSelectModule} from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AngularToastifyModule } from 'angular-toastify';
-import { LoginComponent } from './login/login.component'; 
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component'; 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavbarComponent, SignupComponent, LoginComponent],
+  declarations: [AppComponent, HomeComponent, NavbarComponent, SignupComponent, LoginComponent, DashboardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

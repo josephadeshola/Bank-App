@@ -9,7 +9,7 @@
             </ng-template>
 
             <mat-form-field class="col-12">
-              <mat-label>Full Name</mat-label>
+              <mat-label><i class="bi bi-tsunami"></i> Full Name</mat-label>
               <input
                 matInput
                 class="col-12"
@@ -40,7 +40,7 @@
               </div>
             </div>
             <mat-form-field class="col-12">
-              <mat-label>Email Address</mat-label>
+              <mat-label><i class="bi bi-envelope-fill"></i> Email Address</mat-label>
               <input
                 matInput
                 class="col-12"
@@ -71,7 +71,7 @@
               </div>
             </div>
             <mat-form-field class="col-12">
-              <mat-label>Phone Number</mat-label>
+              <mat-label><i class="bi bi-telephone-fill"></i> Phone Number</mat-label>
               <input
                 matInput
                 class="col-12"
@@ -101,9 +101,9 @@
               </div>
             </div>
             <mat-form-field class="col-12">
-              <mat-label>Password</mat-label>
+              <mat-label><i class="bi bi-lock-fill"></i> Password</mat-label>
               <input
-                matInput
+                matInput [type]="hide ? 'password':'text'"
                 class="col-12"
                 placeholder="Password"
                 formControlName="password"
@@ -116,6 +116,9 @@
                   firstFormGroup.get('password')?.touched
                 "
               />
+              <div class="px-2" style="cursor: pointer;" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </div>
             </mat-form-field>
             <div
               *ngIf="
@@ -259,7 +262,7 @@
                 </div>
               </div>
               <mat-form-field class="col-12">
-                <mat-label>NIN / BVN</mat-label>
+                <mat-label>NIN / BVN (Option)</mat-label>
                 <input
                   matInput
                   type="number"

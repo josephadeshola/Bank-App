@@ -11,8 +11,16 @@ import { Router } from '@angular/router';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
   providers: [],
+  styles: [`
+    .custom-snackbar {
+      background-color: red;
+      color: #fff;
+      padding: 16px;
+      border-radius: 4px;
+    }
+  `],
 })
-export class SignupComponent {
+export class SignupComponent  {
   // signup Details
   fullName = '';
   email = '';
@@ -27,10 +35,11 @@ export class SignupComponent {
   ninBvn = '';
   language = '';
   marital = '';
+  hide=true;
  
   public response: any = {};
   public message = '';
-  public style = 'error';
+  public style = 'Close';
   // first = '';
   constructor(
     public _formBuilder: FormBuilder,
@@ -42,13 +51,13 @@ export class SignupComponent {
   ) { }
   public firstFormGroup = this._formBuilder.group({
     fullName: ['fola', Validators.required],
-    email: ['joy125d@gmail.com', [Validators.required, Validators.email]],
+    email: ['joyd@gmail.com', [Validators.required, Validators.email]],
     phone: [
       '07060670474',
       [Validators.required, Validators.maxLength(11), Validators.minLength(11)],
     ],
     password: [
-      '123456',
+      '123457',
       [Validators.required, Validators.minLength(6), Validators.maxLength(40)],
     ],
     termsAndConditions: [ false, Validators.requiredTrue],
@@ -56,13 +65,14 @@ export class SignupComponent {
     birth: ['2005-02-9', Validators.required],
     address: ['temidere 23 ilorin kwara state', Validators.required],
     nin_bvn: [
-      '3345621',
+      '83345621666',
       [Validators.required, Validators.maxLength(11), Validators.minLength(11)],
     ],
     language: ['yoruba', Validators.required],
     gender: ['male', Validators.required],
     marital: ['single', Validators.required],
   });
+ 
   StartRegister() {
     if (this.firstFormGroup.valid) {
       this.bankingService.setUserCreate(this.firstFormGroup.value).subscribe(data => {
@@ -71,14 +81,17 @@ export class SignupComponent {
 
         if (this.response.status == true) {
           this.SnackBar.open('Registration Successful', '', {
-            duration: 4000,
+            duration: 3000,
+            panelClass: ['custom-snackbar'],
           });
-          // this.route.navigate(["/login"])
+          this.route.navigate(["/login"])
         }
         else {
           this.message = "email already exist"
           this.SnackBar.open(this.message, this.style, {
-            duration: 4000
+            duration: 3000,
+            panelClass: ['custom-snackbar'],
+            
           });
         }
       },(error) => {

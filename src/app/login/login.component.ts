@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from '../services/login.service';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -9,33 +11,54 @@ import { LoginService } from '../services/login.service';
 })
 export class LoginComponent {
   // login Details
-  email = '';
-  password = '';
+  public email = '';
+  public password = '';
   public result: any = {};
-
+  public message = '';
+  public style = ''
+  public  hide=true;
   constructor(
     public formbuild: FormBuilder,
-    public loginservice:LoginService
-  ) {}
-
+    public loginservice: LoginService,
+    public route: Router,
+    public SnackBar: MatSnackBar
+  ) { }
   public secondFormGroup = this.formbuild.group({
-    email: ['joy12d@gmail.com', [Validators.required, Validators.email]],
+    email: ['', [Validators.required, Validators.email]],
     password: [
-      '123456',
+      '',
       [Validators.required, Validators.minLength(6), Validators.maxLength(40)],
     ],
   });
-
   StartLogin() {
     if (this.secondFormGroup.valid) {
-      const email = this.secondFormGroup.get('email')?.value;
-      const password = this.secondFormGroup.get('password')?.value;
       this.loginservice
-        .setUserLogin({ email, password })
-        .subscribe((data) => {
+        .setUserLogin(this.secondFormGroup.value).subscribe(data => {
           this.result = data;
-          console.log(this.result);
-        });
+          console.log(data);
+          if (this.result.status == true) {
+            this.SnackBar.open('Registration Successful', '', {
+              duration: 4000,
+            });
+            this.route.navigate(["/dashboard"])
+          }
+          else if (this.result.status == false) {
+            this.message = "Invalid password"
+            this.SnackBar.open(this.message, this.style, {
+              duration: 4000
+            })
+          }
+          else {
+            this.message = "Invalid email"
+            this.SnackBar.open(this.message, this.style, {
+              duration: 4000
+            })
+          }
+        }, (error) => {
+          console.log(error);
+
+        }
+        )
     }
   }
 }

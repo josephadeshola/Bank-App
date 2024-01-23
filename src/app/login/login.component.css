@@ -8,3 +8,12 @@ button:hover{
     background-color:rgb(25, 25, 133) ;
    
 }
+span{
+    height: 50px;
+    width: 50px;
+    color: #fff;
+     background-color:rgb(25, 25, 133) ;
+     border-radius: 30px;  
+}
+
+
