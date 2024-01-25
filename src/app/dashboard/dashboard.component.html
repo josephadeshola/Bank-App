@@ -3,8 +3,8 @@
 </marquee>
 <div class="container">
   <div class="row">
-    <div class="mt-2 mt-md-0 bg-parent py-2">
-      <div class="balance px-3 py-3 col-12">
+    <div class="mt-1 mt-md-0 bg-parent py-2">
+      <div class="balance px-md-3 px-1 py-3 col-12">
         <div class="d-flex justify-content-between">
           <div>
             <i class="text-light bi bi-check2-circle"></i
@@ -13,12 +13,12 @@
               style="cursor: pointer"
               *ngIf="!showAmount"
               (click)="toggleAmountVisibility()"
-              class="bi text-light fs-5 ms-md-3 ms-1 bi-eye-slash-fill"
+              class="bi text-light  ms-md-3 ms-1 bi-eye-slash-fill"
             ></i>
             <i
               style="cursor: pointer"
               (click)="toggleAmountVisibility()"
-              class="bi text-light fs-5 ms-3 bi-eye-fill"
+              class="bi text-light  ms-3 bi-eye-fill"
               *ngIf="showAmount"
             ></i>
           </div>
