@@ -12,15 +12,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.css'],
   providers: [],
   styles: [`
-    .custom-snackbar {
-      background-color: red;
-      color: #fff;
-      padding: 16px;
-      border-radius: 4px;
-    }
-  `],
+      .custom-snackbar {
+        background-color: red;
+        color: #fff;
+        padding: 16px;
+        border-radius: 4px;
+      }
+    `],
 })
-export class SignupComponent  {
+export class SignupComponent {
   // signup Details
   fullName = '';
   email = '';
@@ -35,8 +35,8 @@ export class SignupComponent  {
   ninBvn = '';
   language = '';
   marital = '';
-  hide=true;
- 
+  hide = true;
+
   public response: any = {};
   public message = '';
   public style = 'Close';
@@ -47,11 +47,11 @@ export class SignupComponent  {
     public bankingService: BankingService,
     public SnackBar: MatSnackBar,
     public toast: ToastService,
-    public route:Router
+    public route: Router
   ) { }
   public firstFormGroup = this._formBuilder.group({
     fullName: ['Ayomide john', Validators.required],
-    email: ['adseholajoseph99@gmail.com', [Validators.required, Validators.email]],
+    email: ['adseholajoseph939@gmail.com', [Validators.required, Validators.email]],
     phone: [
       '',
       [Validators.required, Validators.maxLength(10), Validators.minLength(10)],
@@ -60,32 +60,39 @@ export class SignupComponent  {
       '7878787',
       [Validators.required, Validators.minLength(6), Validators.maxLength(40)],
     ],
-    termsAndConditions: [ false, Validators.requiredTrue],
+    termsAndConditions: [false, Validators.requiredTrue],
     userName: ['joseph', Validators.required],
     birth: ['2004-08-25', Validators.required],
     address: ['oyo state', Validators.required],
     nin_bvn: [
-      '838373837383',
+      '838373837',
       [Validators.required, Validators.maxLength(11), Validators.minLength(11)],
     ],
     language: ['english', Validators.required],
     gender: ['male', Validators.required],
     marital: ['single', Validators.required],
   });
- 
+
   StartRegister() {
     if (this.firstFormGroup.valid) {
       this.bankingService.setUserCreate(this.firstFormGroup.value).subscribe(data => {
         this.response = data;
         console.log(data);
 
-        if (this.response.status == true) {
+        if (this.response.status === true) {
           this.SnackBar.open('Registration Successful', '', {
             duration: 3000,
             panelClass: ['custom-snackbar'],
           });
           // this.route.navigate(["/login"])
         }
+        // else {
+        //   this.message = `Phone number ${this.response.phone} is not valid`
+        //   this.SnackBar.open(this.message, this.style, {
+        //   duration: 3000,
+        //   panelClass: ['custom-snackbar'],
+        // });
+        // }
         else {
           this.message = "email already exist"
           this.SnackBar.open(this.message, this.style, {
@@ -93,7 +100,8 @@ export class SignupComponent  {
             panelClass: ['custom-snackbar'],
           });
         }
-      },(error) => {
+        
+      }, (error) => {
         console.log(error, "error day");
       }
       );
@@ -101,3 +109,4 @@ export class SignupComponent  {
   }
 
 }
+
