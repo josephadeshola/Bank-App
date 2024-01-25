@@ -1,34 +1,30 @@
+<marquee behavior="" class="mt-md-4 mt-5 " direction="">
+<i class="fw-bold">Welcome shole</i>
+</marquee>
 <div class="container">
   <div class="row">
-    <div class="mt-4 bg-parent py-2">
-      <div
-        style="
-          background-color: rgb(25, 25, 133);
-          border-radius: 15px;
-          height: 30vh;
-        "
-        class="balance px-3 py-3 col-12"
-      >
+    <div class="mt-2 mt-md-0 bg-parent py-2">
+      <div class="balance px-3 py-3 col-12">
         <div class="d-flex justify-content-between">
           <div>
-            <i class="bi fs-5 text-light bi-wallet2"></i
+            <i class="text-light bi bi-check2-circle"></i
             ><span class="text-light"> Available Balance</span>
             <i
               style="cursor: pointer"
               *ngIf="!showAmount"
               (click)="toggleAmountVisibility()"
-              class="bi text-light fs-4 ms-3 bi-eye-slash-fill"
+              class="bi text-light fs-5 ms-md-3 ms-1 bi-eye-slash-fill"
             ></i>
             <i
               style="cursor: pointer"
               (click)="toggleAmountVisibility()"
-              class="bi text-light fs-4 ms-3 bi-eye-fill"
+              class="bi text-light fs-5 ms-3 bi-eye-fill"
               *ngIf="showAmount"
             ></i>
           </div>
           <div>
             <span class="text-light">Transaction History</span
-            ><i class="bi fs-5 mt-3 text-light bi-arrow-right"></i>
+            ><i class="fs-5 mt-3 text-light bi ms-2 bi-chevron-right"></i>
           </div>
         </div>
         <div class="amount mt-5 py-4">
@@ -37,15 +33,93 @@
         </div>
       </div>
     </div>
-    <div class="carry-transaction py-4 shadow px-3 rounded col-11 mx-auto">
+    <div
+      class="carry-transaction py-md-3 py-4 mt-md-0 mt-3 shadow px-3 rounded col-11 mx-auto"
+    >
       <div class="d-flex justify-content-between">
-        <div class="fw-bold">To Drc</div>
-        <div class="fw-bold">To Bank</div>
-        <div class="fw-bold">Wlthdraw</div>
-      </div>
-      <div class="px-2 mt-3">
-        <hr />
+        <div class="text-center">
+          <div class="get-img-shadow py-2 shadow mb-2">
+            <i class="bi bi-person-workspace text-light fs-5"></i> <br />
+          </div>
+          <span>To Drc </span>
+        </div>
+        <div class="text-center">
+          <div class="get-img-shadow py-2 shadow mb-2">
+            <i class="bi bi-bank2 text-light fs-5"></i> <br />
+          </div>
+          <span>To Bank</span>
+        </div>
+        <div class="text-center">
+          <div class="get-img-shadow py-2 shadow mb-2">
+            <i class="bi bi-arrows-angle-expand text-light fs-5"></i> <br />
+          </div>
+          <span class="text-center">Wlthdraw </span>
+        </div>
       </div>
     </div>
   </div>
+  <div class="py-md-3 py-4 shadow carry-transaction px-3 mt-3 mt-md-2 rounded col-11 mx-auto">
+    <div class="d-flex justify-content-between">
+      <div class="text-center">
+        <div class="get-img-shadow py-2 shadow mb-2">
+          <i class="bi bi-person-workspace text-light fs-5"></i> <br />
+        </div>
+        <span>Airtime</span>
+      </div>
+      <div class="text-center">
+        <div class="get-img-shadow py-2 shadow mb-2">
+          <i class="bi bi-bank2 text-light fs-5"></i> <br />
+        </div>
+        <span>Data</span>
+      </div>
+      <div class="text-center">
+        <div class="get-img-shadow py-2 shadow mb-2">
+          <i class="bi bi-arrows-angle-expand text-light fs-5"></i> <br />
+        </div>
+        <span class="text-center">Betting</span>
+      </div>
+      <div class="text-center">
+        <div class="get-img-shadow py-2 shadow mb-2">
+          <i class="bi bi-arrows-angle-expand text-light fs-5"></i> <br />
+        </div>
+        <span class="text-center">TV</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid border py-1 shadow fixed-button">
+    <div class="rounded col-11 mx-auto">
+        <div class="d-flex justify-content-between">
+          <div class="text-center">
+            <div class="get-img-shadows py-2 shadow mb-2">
+              <i class="bi bi-person-workspace text-light fs-5"></i> <br />
+            </div>
+            <span>Home</span>
+          </div>
+          <div class="text-center">
+            <div class="get-img-shadows py-2 shadow mb-2">
+              <i class="bi bi-bank2 text-light fs-5"></i> <br />
+            </div>
+            <span>Reward</span>
+          </div>
+          <div class="text-center">
+            <div class="get-img-shadows py-2 shadow mb-2">
+              <i class="bi bi-arrows-angle-expand text-light fs-5"></i> <br />
+            </div>
+            <span class="text-center">Finance</span>
+          </div>
+          <div class="text-center">
+            <div class="get-img-shadows py-2 shadow mb-2">
+              <i class="bi bi-arrows-angle-expand text-light fs-5"></i> <br />
+            </div>
+            <span class="text-center">Cards</span>
+          </div>
+          <div class="text-center">
+            <div class="get-img-shadows py-2 shadow mb-2">
+              <i class="bi bi-arrows-angle-expand text-light fs-5"></i> <br />
+            </div>
+            <span class="text-center">Me</span>
+          </div>
+        </div>
+      </div>
 </div>

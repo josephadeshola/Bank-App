@@ -1,7 +1,50 @@
-.carry-transaction{
-    border: 1px solid  rgb(25, 25, 133);
+.balance {
+  background-color: rgb(25, 25, 133);
+  border-radius: 15px;
+  height: 27vh;
 }
-@media (max-width:688px) {
-    
+.carry-transaction {
+  border: 1px solid rgb(25, 25, 133);
 }
-
+.bi-chevron-right {
+  font-size: 12px !important;
+  text-align: center;
+  align-items: center;
+}
+.get-img-shadow {
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  background-color: rgba(45, 45, 226, 0.411);
+  text-align: center;
+  align-items: center;
+}
+.get-img-shadows {
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  background-color: rgb(25, 25, 133);
+  text-align: center;
+  align-items: center;
+}
+.fixed-button{
+    position: fixed;
+    bottom: 0px;
+    height: 13vh;
+    background-color:#fff;
+ 
+}
+@media (max-width: 688px) {
+  .balance {
+    background-color: rgb(25, 25, 133);
+    border-radius: 15px;
+    height: 21vh;
+  }
+  .fixed-button{
+    position: fixed;
+    bottom: 0px;
+    height: 13vh;
+    background-color:#fff;
+ 
+}
+}
