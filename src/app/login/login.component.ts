@@ -37,7 +37,7 @@ export class LoginComponent {
           this.result = data;
           console.log(data);
           if (this.result.status == true) {
-            this.SnackBar.open('Registration Successful', '', {
+            this.SnackBar.open('Registration Successful', 'success', {
               duration: 4000,
             });
             this.route.navigate(["/dashboard"])

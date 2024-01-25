@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+public showAmount=false
 
+  toggleAmountVisibility() {
+    this.showAmount = !this.showAmount;
+  }
 }

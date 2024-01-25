@@ -1,8 +1,51 @@
 <div class="container">
-    <div class="row">
-        <div class=" mt-4 bg-parent border border-primary">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores modi expedita, quas architecto eaque alias, nulla maxime recusandae fuga accusamus, sed harum natus totam tempora voluptas veniam aliquid cum dicta quasi? Omnis quas in, eveniet tenetur dolor numquam, hic, rerum illum accusamus et aperiam ullam. Asperiores eum non earum. Provident.
-           
+  <div class="row">
+    <div class="mt-4 bg-parent py-2">
+      <div
+        style="
+          background-color: rgb(25, 25, 133);
+          border-radius: 15px;
+          height: 30vh;
+        "
+        class="balance px-3 py-3 col-12"
+      >
+        <div class="d-flex justify-content-between">
+          <div>
+            <i class="bi fs-5 text-light bi-wallet2"></i
+            ><span class="text-light"> Available Balance</span>
+            <i
+              style="cursor: pointer"
+              *ngIf="!showAmount"
+              (click)="toggleAmountVisibility()"
+              class="bi text-light fs-4 ms-3 bi-eye-slash-fill"
+            ></i>
+            <i
+              style="cursor: pointer"
+              (click)="toggleAmountVisibility()"
+              class="bi text-light fs-4 ms-3 bi-eye-fill"
+              *ngIf="showAmount"
+            ></i>
+          </div>
+          <div>
+            <span class="text-light">Transaction History</span
+            ><i class="bi fs-5 mt-3 text-light bi-arrow-right"></i>
+          </div>
         </div>
+        <div class="amount mt-5 py-4">
+          <h1 class="fw-bold text-light" *ngIf="showAmount">$8,000,000</h1>
+          <h1 class="fw-bold text-light" *ngIf="!showAmount">*****</h1>
+        </div>
+      </div>
     </div>
+    <div class="carry-transaction py-4 shadow px-3 rounded col-11 mx-auto">
+      <div class="d-flex justify-content-between">
+        <div class="fw-bold">To Drc</div>
+        <div class="fw-bold">To Bank</div>
+        <div class="fw-bold">Wlthdraw</div>
+      </div>
+      <div class="px-2 mt-3">
+        <hr />
+      </div>
+    </div>
+  </div>
 </div>

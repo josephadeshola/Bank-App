@@ -50,25 +50,25 @@ export class SignupComponent  {
     public route:Router
   ) { }
   public firstFormGroup = this._formBuilder.group({
-    fullName: ['fola', Validators.required],
-    email: ['joyd@gmail.com', [Validators.required, Validators.email]],
+    fullName: ['Ayomide john', Validators.required],
+    email: ['adseholajoseph99@gmail.com', [Validators.required, Validators.email]],
     phone: [
-      '07060670474',
-      [Validators.required, Validators.maxLength(11), Validators.minLength(11)],
+      '',
+      [Validators.required, Validators.maxLength(10), Validators.minLength(10)],
     ],
     password: [
-      '123457',
+      '7878787',
       [Validators.required, Validators.minLength(6), Validators.maxLength(40)],
     ],
     termsAndConditions: [ false, Validators.requiredTrue],
-    userName: ['ay.com', Validators.required],
-    birth: ['2005-02-9', Validators.required],
-    address: ['temidere 23 ilorin kwara state', Validators.required],
+    userName: ['joseph', Validators.required],
+    birth: ['2004-08-25', Validators.required],
+    address: ['oyo state', Validators.required],
     nin_bvn: [
-      '83345621666',
+      '838373837383',
       [Validators.required, Validators.maxLength(11), Validators.minLength(11)],
     ],
-    language: ['yoruba', Validators.required],
+    language: ['english', Validators.required],
     gender: ['male', Validators.required],
     marital: ['single', Validators.required],
   });
@@ -84,14 +84,13 @@ export class SignupComponent  {
             duration: 3000,
             panelClass: ['custom-snackbar'],
           });
-          this.route.navigate(["/login"])
+          // this.route.navigate(["/login"])
         }
         else {
           this.message = "email already exist"
           this.SnackBar.open(this.message, this.style, {
             duration: 3000,
             panelClass: ['custom-snackbar'],
-            
           });
         }
       },(error) => {

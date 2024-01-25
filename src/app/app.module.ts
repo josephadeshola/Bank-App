@@ -9,19 +9,28 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatStepperModule } from '@angular/material/stepper';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
-import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatSelectModule} from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AngularToastifyModule } from 'angular-toastify';
 import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component'; 
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ErrorpageComponent } from './errorpage/errorpage.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavbarComponent, SignupComponent, LoginComponent, DashboardComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    NavbarComponent,
+    SignupComponent,
+    LoginComponent,
+    DashboardComponent,
+    ErrorpageComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -37,8 +46,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HttpClientModule,
     MatSnackBarModule,
     AngularToastifyModule,
-    
-  
   ],
   providers: [],
   bootstrap: [AppComponent],

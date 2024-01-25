@@ -1,4 +1,7 @@
-.bg-parent{
-    background-color:rgb(25, 25, 133) ;
-
+.carry-transaction{
+    border: 1px solid  rgb(25, 25, 133);
 }
+@media (max-width:688px) {
+    
+}
+
