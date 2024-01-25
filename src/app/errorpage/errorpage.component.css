@@ -1,5 +1,12 @@
+
 @media (max-width:688px) {
     .error-img{
-        margin-top: 10pc;
+        margin-top: 6pc;
     }
+}
+button{
+    background-color:rgb(25, 25, 133) ;
+}
+button:hover{
+    background-color:rgb(25, 25, 133) ;
 }
