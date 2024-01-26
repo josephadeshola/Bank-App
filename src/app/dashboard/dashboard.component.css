@@ -48,11 +48,116 @@
  
 }
 }
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .balance {
     background-color: rgb(25, 25, 133);
     border-radius: 15px;
     height: 25vh;
+  }
+  .fixed-button{
+    position: fixed;
+    bottom: 0px;
+    height: 15vh;
+    background-color:#fff;
+ 
+}
+.bi-chevron-right {
+    font-size: 10px !important;
+    text-align: center;
+    align-items: center;
+  }
+  .avi-text{
+    font-size: 10px;
+  }
+  .pb-20{
+    padding-bottom: 100px !important;
+  }
+} */
+@media (max-width: 600px) {
+     .balance {
+    background-color: rgb(25, 25, 133);
+    border-radius: 15px;
+    height: 19vh !important;
+  }
+  .fixed-button{
+    position: fixed;
+    bottom: 0px;
+    height: 15vh;
+    background-color:#fff;
+ 
+}
+.bi-chevron-right {
+    font-size: 10px !important;
+    text-align: center;
+    align-items: center;
+  }
+  .avi-text{
+    font-size: 10px;
+  }
+  .pb-20{
+    padding-bottom: 100px !important;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    .balance {
+        background-color: rgb(25, 25, 133);
+        border-radius: 15px;
+        height: 15vh;
+      }
+      .fixed-button{
+        position: fixed;
+        bottom: 0px;
+        height: 15vh;
+        background-color:#fff;
+     
+    }
+    .bi-chevron-right {
+        font-size: 10px !important;
+        text-align: center;
+        align-items: center;
+      }
+      .avi-text{
+        font-size: 10px;
+      }
+      .pb-20{
+        padding-bottom: 100px !important;
+      }
+}
+
+@media  (min-width: 768px) and (max-width: 992px) {
+     .balance {
+    background-color: rgb(25, 25, 133);
+    border-radius: 15px;
+    height: 17vh;
+  }
+  .fixed-button{
+    position: fixed;
+    bottom: 0px;
+    height: 15vh;
+    background-color:#fff;
+ 
+}
+.bi-chevron-right {
+    font-size: 10px !important;
+    text-align: center;
+    align-items: center;
+  }
+  .avi-text{
+    font-size: 10px;
+  }
+  .pb-20{
+    padding-bottom: 100px !important;
+  }
+}
+
+    
+    
+
+@media (max-width: 993px) {
+     .balance {
+    background-color: rgb(25, 25, 133);
+    border-radius: 15px;
+    height: 17vh;
   }
   .fixed-button{
     position: fixed;
