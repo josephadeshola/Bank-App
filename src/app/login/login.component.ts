@@ -49,7 +49,7 @@ export class LoginComponent {
             })
           }
           else {
-            this.message = "Invalid email"
+            this.message = "Invalid Email Address"
             this.SnackBar.open(this.message, this.style, {
               duration: 4000
             })

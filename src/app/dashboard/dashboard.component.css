@@ -34,11 +34,13 @@
     background-color:#fff;
  
 }
+
+
 @media (max-width: 736px) {
   .balance {
     background-color: rgb(25, 25, 133);
     border-radius: 15px;
-    height: 10vh;
+    height: 12vh;
   }
   .fixed-button{
     position: fixed;
@@ -48,36 +50,11 @@
  
 }
 }
-/* @media (max-width: 480px) {
-  .balance {
-    background-color: rgb(25, 25, 133);
-    border-radius: 15px;
-    height: 25vh;
-  }
-  .fixed-button{
-    position: fixed;
-    bottom: 0px;
-    height: 15vh;
-    background-color:#fff;
- 
-}
-.bi-chevron-right {
-    font-size: 10px !important;
-    text-align: center;
-    align-items: center;
-  }
-  .avi-text{
-    font-size: 10px;
-  }
-  .pb-20{
-    padding-bottom: 100px !important;
-  }
-} */
 @media (max-width: 600px) {
      .balance {
     background-color: rgb(25, 25, 133);
     border-radius: 15px;
-    height: 19vh !important;
+    height: 23vh !important;
   }
   .fixed-button{
     position: fixed;
