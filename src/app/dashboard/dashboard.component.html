@@ -1,6 +1,12 @@
 <marquee behavior="" class="mt-md-4 mt-5 " direction="">
 <i class="fw-bold">Welcome shole</i>
 </marquee>
+<div *ngIf="userAmount !== undefined">
+  User Amount: {{ userAmount }}
+</div>
+<div *ngIf="showAmount">
+</div>
+
 <div class="container">
   <div class="row">
     <div class="mt-1 mt-md-0 bg-parent py-2">
@@ -28,7 +34,7 @@
           </div>
         </div>
         <div class="amount mt-5 py-4">
-          <h1 class="fw-bold text-light" *ngIf="showAmount">$8,000,000</h1>
+          <h1 class="fw-bold text-light" *ngIf="showAmount">NGN 8,000,000</h1>
           <h1 class="fw-bold text-light" *ngIf="!showAmount">*****</h1>
         </div>
       </div>

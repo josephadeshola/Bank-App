@@ -6,15 +6,17 @@ import { HomeComponent } from './layout/home/home.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
+import { VerifyAccountComponent } from './verify-account/verify-account.component';
 
 const routes: Routes = [
   { path: '', component:HomeComponent, children:[
     {path:'',component:NavbarComponent},
     { path: 'create', component: SignupComponent },
-    {path:'login',component:LoginComponent},
     {path:'dashboard',component:DashboardComponent},
-    {path:"**",component:ErrorpageComponent}
   ]},
+  {path:'login',component:LoginComponent},
+  {path:'verify/account',component:VerifyAccountComponent},
+  {path:"**",component:ErrorpageComponent},
 ];
 
 @NgModule({

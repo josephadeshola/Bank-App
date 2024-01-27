@@ -20,6 +20,7 @@ import { AngularToastifyModule } from 'angular-toastify';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
+import { VerifyAccountComponent } from './verify-account/verify-account.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ErrorpageComponent } from './errorpage/errorpage.component';
     LoginComponent,
     DashboardComponent,
     ErrorpageComponent,
+    VerifyAccountComponent,
   ],
   imports: [
     BrowserModule,

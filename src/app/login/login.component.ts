@@ -17,6 +17,8 @@ export class LoginComponent {
   public message = '';
   public style = ''
   public  hide=true;
+  public verifyMessage=''
+  public verifyClass=''
   constructor(
     public formbuild: FormBuilder,
     public loginservice: LoginService,
@@ -30,6 +32,14 @@ export class LoginComponent {
       [Validators.required, Validators.minLength(6), Validators.maxLength(40)],
     ],
   });
+  ngOnInit(): void {
+  this.verifyMessage='Account Verified Successfully Please proceed to login';
+  this.verifyClass='alert alert-success border border-none py-3 text-center';
+  setTimeout(() => {
+    this.verifyClass='';
+    this.verifyMessage='';
+  }, 3000);
+  }
   StartLogin() {
     if (this.secondFormGroup.valid) {
       this.loginservice
@@ -60,5 +70,6 @@ export class LoginComponent {
         }
         )
     }
+    
   }
 }

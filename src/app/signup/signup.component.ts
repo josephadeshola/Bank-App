@@ -84,7 +84,7 @@ export class SignupComponent {
             duration: 3000,
             panelClass: ['custom-snackbar'],
           });
-          // this.route.navigate(["/login"])
+          // this.route.navigate(["/verify/account"])
         }
         // else {
         //   this.message = `Phone number ${this.response.phone} is not valid`
