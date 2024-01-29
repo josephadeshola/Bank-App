@@ -16,9 +16,9 @@ export class LoginComponent {
   public result: any = {};
   public message = '';
   public style = ''
-  public  hide=true;
-  public verifyMessage=''
-  public verifyClass=''
+  public hide = true;
+  public verifyMessage = ''
+  public verifyClass = ''
   constructor(
     public formbuild: FormBuilder,
     public loginservice: LoginService,
@@ -33,12 +33,12 @@ export class LoginComponent {
     ],
   });
   ngOnInit(): void {
-  this.verifyMessage='Account Verified Successfully Please proceed to login';
-  this.verifyClass='alert alert-success border border-none py-3 text-center';
-  setTimeout(() => {
-    this.verifyClass='';
-    this.verifyMessage='';
-  }, 3000);
+    this.verifyMessage = 'Account Verified Successfully Please proceed to login';
+    this.verifyClass = 'alert alert-success border border-none py-3 text-center';
+    setTimeout(() => {
+      this.verifyClass = '';
+      this.verifyMessage = '';
+    }, 3000);
   }
   StartLogin() {
     if (this.secondFormGroup.valid) {
@@ -47,10 +47,15 @@ export class LoginComponent {
           this.result = data;
           console.log(data);
           if (this.result.status == true) {
-            this.SnackBar.open('Registration Successful', 'success', {
-              duration: 4000,
-            });
-            this.route.navigate(["/dashboard"])
+            const loginData = this.loginservice.getLoginData();
+            if (loginData) {
+              this.loginservice.saveLoginData(data)
+              this.SnackBar.open('Registration Successful', 'success', {
+                duration: 4000,
+              });
+              console.log(loginData);
+              this.route.navigate(["/dashboard"])
+            }
           }
           else if (this.result.status == false) {
             this.message = "Invalid password"
@@ -70,6 +75,6 @@ export class LoginComponent {
         }
         )
     }
-    
+
   }
 }

@@ -5,17 +5,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DashboardService {
-  private baseUrl=("http://localhost/bankdatabase/dashboard.php")
-  
-  constructor(public https:HttpClient) {};
-  getUserAmount(email:any){
-    const body = { email };
-    return this.https.post(this.baseUrl,body);
-  }
-  // getUserAmount(email:string){
-  //   const url = `${this.baseUrl}dashboard.php`;
-  //   const body= {email};
 
-  //   return this.https.post(url, body);
+  // public apiUrl = 'http://localhost/bankdatabase/dashboard.php';
+  // constructor(public https: HttpClient) { };
+  // registerUser(userData: any) {
+  //   return this.https.post(this.apiUrl, userData);
   // }
 }

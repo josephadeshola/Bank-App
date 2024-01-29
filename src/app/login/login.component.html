@@ -1,84 +1,55 @@
 <form [formGroup]="secondFormGroup" (ngSubmit)="StartLogin()">
   <div class="col-md-5 col-10 mx-auto mt-5 py-md-2 py-5">
     <div class={{verifyClass}}>{{verifyMessage}}</div>
-    <h4 class="fw-bold fs-5 pb-3 mt-5">LOG IN TO <span class="py-2 px-2"> DRC <small>banking</small> </span> DASHBOARD</h4>
+    <h4 class="fw-bold pb-3 mt-5">LOG IN TO <span class="py-2 px-2"> DRC <small>banking</small> </span> DASHBOARD</h4>
     <mat-form-field class="col-12">
       <mat-label><i class="bi bi-envelope-fill fs-"></i> Email Address</mat-label>
-      <input
-        matInput
-        type="email"
-        class="col-12"
-        placeholder="Email"
-        formControlName="email"
-        [class.is-valid]="
+      <input matInput type="email" class="col-12" placeholder="Email" formControlName="email" [class.is-valid]="
           secondFormGroup.get('email')?.valid &&
           secondFormGroup.get('email')?.touched
-        "
-        [class.is-invalid]="
+        " [class.is-invalid]="
           secondFormGroup.get('email')?.invalid &&
           secondFormGroup.get('email')?.touched
-        "
-      />
+        " />
     </mat-form-field>
-    <div
-      *ngIf="
+    <div *ngIf="
         secondFormGroup.get('email')?.invalid &&
         secondFormGroup.get('email')?.touched
-      "
-    >
-      <div
-        class="text-danger col-12 text-center"
-        *ngIf="secondFormGroup.get('email')?.errors?.['required']"
-      >
+      ">
+      <div class="text-danger col-12 text-center" *ngIf="secondFormGroup.get('email')?.errors?.['required']">
         Email is required
       </div>
     </div>
     <mat-form-field class="col-12">
       <mat-label><i class="bi bi-lock-fill"></i> Password</mat-label>
-      <input
-        matInput [type]="hide ?'password':'text'"
-        class="col-12"
-        type="password"
-        placeholder="Password"
-        formControlName="password"
-        [class.is-valid]="
+      <input matInput [type]="hide ?'password':'text'" class="col-12" type="password" placeholder="Password"
+        formControlName="password" [class.is-valid]="
           secondFormGroup.get('password')?.valid &&
           secondFormGroup.get('password')?.touched
-        "
-        [class.is-invalid]="
+        " [class.is-invalid]="
           secondFormGroup.get('password')?.invalid &&
           secondFormGroup.get('password')?.touched
-        "
-      />
-      <div class="px-2" style="cursor: pointer;" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        " />
+      <div class="px-2" style="cursor: pointer;" mat-icon-button matSuffix (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </div>
     </mat-form-field>
-    <div
-      *ngIf="
+    <div *ngIf="
         secondFormGroup.get('password')?.invalid &&
         secondFormGroup.get('password')?.touched
-      "
-    >
-      <div
-        class="text-danger col-12 text-center"
-        *ngIf="secondFormGroup.get('password')?.errors?.['required']"
-      >
+      ">
+      <div class="text-danger col-12 text-center" *ngIf="secondFormGroup.get('password')?.errors?.['required']">
         Password is required
       </div>
     </div>
-    <button
-      class="btn-color mt-2 w-100 py-2 btn text-light"
-      type="submit"
-    >
+    <button class="btn-color mt-2 w-100 py-2 btn text-light" type="submit">
       Login Account
     </button>
     <p class="mt-3">
-        If you are not registered yet
-        <a style="color: rgb(25, 25, 133)" class="fw-bold" routerLink="/create"
-          >Create Account</a
-        >
-      </p>
+      If you are not registered yet
+      <a style="color: rgb(25, 25, 133)" class="fw-bold" routerLink="/create">Create Account</a>
+    </p>
+   <a routerLink="/create"><i style="color: rgb(25, 25, 133)" class="bi bi-arrow-left-circle-fill mt-2 fs-2"></i></a>
   </div>
 </form>
-

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { DashboardService } from '../services/dashboard.service';
+
+import { Component} from '@angular/core';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,27 +8,22 @@ import { DashboardService } from '../services/dashboard.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  userEmail:string='';
-  userAmount: number | undefined;
-public showAmount=false
+  userData:any
+  showAmount: boolean = false;
 
-constructor(public dashbordServe:DashboardService){}
+  constructor(public dashboardService:LoginService) { }
 
-// ngOnInit(): void {
-//   this.dashbordServe.getUserAmount(this.userEmail).subscribe((data:any)=>{
-//     console.log(data);
-//     if (data.status) {
-//       this.userAmount = data.amount;
-//     } else {
-//       console.error('Error fetching user amount:', data.message);
-//     }
-//   },(error) => {
-//     console.error('Error fetching user amount:', error);
-//   }
-//   )
-  
-// } 
+  ngOnInit(){
+   this.userData=this.dashboardService.getLoginData()
+   if(this.userData){
+    console.log(this.userData);
+    
+   }
+  }
+
   toggleAmountVisibility() {
     this.showAmount = !this.showAmount;
   }
+
 }
+

@@ -51,13 +51,13 @@ export class SignupComponent {
   ) { }
   public firstFormGroup = this._formBuilder.group({
     fullName: ['Ayomide john', Validators.required],
-    email: ['adseholajoseph939@gmail.com', [Validators.required, Validators.email]],
+    email: ['adsehola39@gmail.com', [Validators.required, Validators.email]],
     phone: [
       '',
       [Validators.required, Validators.maxLength(10), Validators.minLength(10)],
     ],
     password: [
-      '7878787',
+      '787878',
       [Validators.required, Validators.minLength(6), Validators.maxLength(40)],
     ],
     termsAndConditions: [false, Validators.requiredTrue],
@@ -84,10 +84,10 @@ export class SignupComponent {
             duration: 3000,
             panelClass: ['custom-snackbar'],
           });
-          // this.route.navigate(["/verify/account"])
+          this.route.navigate(["/verify/account"])
         }
-        // else {
-        //   this.message = `Phone number ${this.response.phone} is not valid`
+        // else if(this.response.status === false){
+        //   this.message = `Phone number is not valid`
         //   this.SnackBar.open(this.message, this.style, {
         //   duration: 3000,
         //   panelClass: ['custom-snackbar'],
