@@ -1,53 +1,79 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Transfer</h1>
+        <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form [formGroup]="secondFormGroup">
+        <div class="modal-body d-grid">
+        <label for="">Recipient Account</label>
+        <input type="text" class="py-2 px-2 border border-none" placeholder="Phone NO./Drc Account No./Name" formControlName="accountNumber"
+        [class.is-valid]="
+          secondFormGroup.get('accountNumber')?.valid &&
+          secondFormGroup.get('accountNumber')?.touched
+        " [class.is-invalid]="
+          secondFormGroup.get('accountNumber')?.invalid &&
+          secondFormGroup.get('accountNumber')?.touched
+        " />
+          <div *ngIf="
+          secondFormGroup.get('accountNumber')?.invalid &&
+          secondFormGroup.get('accountNumber')?.touched
+        ">
+        <div class="text-danger col-12 text-center" *ngIf="secondFormGroup.get('accountNumber')?.errors?.['required']">
+          Account Number must be 11 digits
+        </div>
+      </div>
+      </div>
+      </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel Transaction</button>
+        <button (click)="transFer()" type="button" class="btn btn-primary">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
 <marquee behavior="" class="mt-md-4 mt-5 " direction="">
-<i class="fw-bold">Welcome shole</i>
+  <i>Welcome <b>{{fullname}}</b></i>
 </marquee>
-<!-- <div *ngIf="userAmount !== undefined">
-  User Amount: {{ userAmount }}
-</div> -->
 <div *ngIf="showAmount">
 </div>
-
 <div class="container">
   <div class="row">
     <div class="mt-1 mt-md-0 bg-parent py-2">
       <div class="balance px-md-3 px-1 py-3 col-12">
         <div class="d-flex justify-content-between">
           <div>
-            <i class="text-light bi bi-check2-circle"></i
-            ><span class="text-light avi-text"> Available Balance</span>
-            <i
-              style="cursor: pointer"
-              *ngIf="!showAmount"
-              (click)="toggleAmountVisibility()"
-              class="bi text-light  ms-md-3 ms-1 bi-eye-slash-fill"
-            ></i>
-            <i
-              style="cursor: pointer"
-              (click)="toggleAmountVisibility()"
-              class="bi text-light  ms-md-3 ms-1 bi-eye-fill"
-              *ngIf="showAmount"
-            ></i>
+            <i class="text-light bi bi-check2-circle"></i><span class="text-light avi-text"> Available Balance</span>
+            <i style="cursor: pointer" *ngIf="!showAmount" (click)="toggleAmountVisibility()"
+              class="bi text-light  ms-md-3 ms-1 bi-eye-slash-fill"></i>
+            <i style="cursor: pointer" (click)="toggleAmountVisibility()"
+              class="bi text-light  ms-md-3 ms-1 bi-eye-fill" *ngIf="showAmount"></i>
           </div>
           <div>
-            <span class="text-light avi-text">Transaction History</span
-            ><i class="fs-5 mt-3 text-light bi ms-2 bi-chevron-right"></i>
+            <span class="text-light avi-text">Transaction History</span><i
+              class="fs-5 mt-3 text-light bi ms-2 bi-chevron-right"></i>
           </div>
         </div>
         <div class="amount mt-5 py-4">
-          <h1 class="fw-bold text-light" *ngIf="showAmount">NGN 8,000,000</h1>
+          <h1 class="fw-bold text-light" *ngIf="showAmount">
+            <div *ngIf="amount !== undefined">
+              <p>₦{{ amount }}</p>
+            </div>
+          </h1>
           <h1 class="fw-bold text-light" *ngIf="!showAmount">*****</h1>
         </div>
       </div>
     </div>
-    <div
-      class="carry-transaction py-md-3 py-4 mt-md-0 mt-3 shadow px-3 rounded col-11 mx-auto"
-    >
+    <div class="carry-transaction py-md-3 py-4 mt-md-0 mt-3 shadow px-3 rounded col-11 mx-auto">
       <div class="d-flex justify-content-between">
         <div class="text-center">
-          <div class="get-img-shadow py-2 shadow mb-2">
+          <div style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            class="get-img-shadow py-2 shadow mb-2">
             <i class="bi bi-person-workspace text-light fs-5"></i> <br />
           </div>
-          <span>To Drc </span>
+          <span>Transfer</span>
         </div>
         <div class="text-center">
           <div class="get-img-shadow py-2 shadow mb-2">
@@ -94,38 +120,38 @@
   </div>
 </div>
 <div class="container-fluid border py-1 shadow fixed-button">
-    <div class="rounded col-11 mx-auto">
-        <div class="d-flex justify-content-between">
-          <div class="text-center">
-            <div class="get-img-shadows py-2 shadow mb-2">
-              <i class="bi bi-houses-fill text-light fs-5"></i> <br />
-            </div>
-            <span>Home</span>
-          </div>
-          <div class="text-center">
-            <div class="get-img-shadows py-2 shadow mb-2">
-              <i class="bi bi-gem text-light fs-5"></i> <br />
-            </div>
-            <span>Reward</span>
-          </div>
-          <div class="text-center">
-            <div class="get-img-shadows py-2 shadow mb-2">
-              <i class="bi bi-cash-coin text-light fs-5"></i> <br />
-            </div>
-            <span class="text-center">Finance</span>
-          </div>
-          <div class="text-center">
-            <div class="get-img-shadows py-2 shadow mb-2">
-              <i class="bi bi-credit-card text-light fs-5"></i> <br />
-            </div>
-            <span class="text-center">Cards</span>
-          </div>
-          <div class="text-center">
-            <div class="get-img-shadows py-2 shadow mb-2">
-              <i class="bi bi-person-circle text-light fs-5"></i> <br />
-            </div>
-            <span class="text-center">Me</span>
-          </div>
+  <div class="rounded col-11 mx-auto">
+    <div class="d-flex justify-content-between">
+      <div class="text-center">
+        <div class="get-img-shadows py-2 shadow mb-2">
+          <i class="bi bi-houses-fill text-light fs-5"></i> <br />
         </div>
+        <span>Home</span>
       </div>
+      <div class="text-center">
+        <div class="get-img-shadows py-2 shadow mb-2">
+          <i class="bi bi-gem text-light fs-5"></i> <br />
+        </div>
+        <span>Reward</span>
+      </div>
+      <div class="text-center">
+        <div class="get-img-shadows py-2 shadow mb-2">
+          <i class="bi bi-cash-coin text-light fs-5"></i> <br />
+        </div>
+        <span class="text-center">Finance</span>
+      </div>
+      <div class="text-center">
+        <div class="get-img-shadows py-2 shadow mb-2">
+          <i class="bi bi-credit-card text-light fs-5"></i> <br />
+        </div>
+        <span class="text-center">Cards</span>
+      </div>
+      <div class="text-center">
+        <div class="get-img-shadows py-2 shadow mb-2">
+          <i class="bi bi-person-circle text-light fs-5"></i> <br />
+        </div>
+        <span class="text-center">Me</span>
+      </div>
+    </div>
+  </div>
 </div>

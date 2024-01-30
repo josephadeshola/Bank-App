@@ -34,6 +34,13 @@
     background-color:#fff;
  
 }
+button{
+  background-color:rgb(25, 25, 133) ;
+}
+button:hover{
+  background-color:rgb(25, 25, 133) ;
+ 
+}
 
 
 @media (max-width: 736px) {
